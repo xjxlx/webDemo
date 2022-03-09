@@ -1,0 +1,123 @@
+package com.cy.enums;
+
+import com.bq.tool.library.utils.CommonUser;
+
+/**
+ * 车主服务的对象
+ */
+public enum VehicleServiceEnum {
+
+    /**
+     * 充电吧
+     */
+    CDB(CommonUser.VEHICLE_SERVICE_CDB, 1),
+
+    /**
+     * IM的对象
+     */
+    IM(CommonUser.VEHICLE_SERVICE_IM, 2),
+
+    /**
+     * 一键400
+     */
+    YJ400(CommonUser.VEHICLE_SERVICE_400, 3),
+
+    /**
+     * 车主手册
+     */
+    NOTEBOOK(CommonUser.VEHICLE_SERVICE_NOTEBOOK, 4),
+
+    /**
+     * 车机密码
+     */
+    TURNING_MACHINE_PASSWORD(CommonUser.VEHICLE_SERVICE_TURNING_MACHINE_PASSWORD, 5),
+
+    /**
+     * 服务网点
+     */
+    SERVICE_NETWORK(CommonUser.VEHICLE_SERVICE_SERVICE_NETWORK, 6),
+
+    /**
+     * 预约维保
+     */
+    MAINTENANCE(CommonUser.VEHICLE_SERVICE_MAINTENANCE, 7),
+
+    /**
+     * 一键救援
+     */
+    RESCUE(CommonUser.VEHICLE_SERVICE_RESCUE, 8),
+
+    /**
+     * 实名认证
+     */
+    ATTESTATION(CommonUser.VEHICLE_SERVICE_ATTESTATION, 9),
+
+    /**
+     * 违章信息
+     */
+    REGULATION_INFO(CommonUser.VEHICLE_SERVICE_REGULATION_INFO, 10),
+
+    /**
+     * 车载流量
+     */
+    VEHICULAR_TRAFFIC(CommonUser.VEHICLE_SERVICE_VEHICULAR_TRAFFIC, 11),
+
+    /**
+     * 问题反馈
+     */
+    COMPLAINTS_SUGGESTIONS(CommonUser.VEHICLE_SERVICE_COMPLAINTS_SUGGESTIONS, 12),
+
+    /**
+     * 家庭圈
+     */
+    FAMILY_CIRCLE(CommonUser.VEHICLE_SERVICE_FAMILY_CIRCLE, 13),
+
+    /**
+     * OTA升级
+     */
+    OTA(CommonUser.VEHICLE_SERVICE_OTA, 14),
+
+    /**
+     * 借车服务
+     */
+    LOAN_SERVICE(CommonUser.VEHICLE_SERVICE_LOAN_SERVICE, 15),
+
+    /**
+     * 紧急联系人
+     */
+    EMERGENCY_CONTACT(CommonUser.VEHICLE_SERVICE_EMERGENCY_CONTACT, 16),
+
+    /**
+     * 永不抛锚
+     */
+    TO_ANCHOR(CommonUser.VEHICLE_SERVICE_TO_ANCHOR, 17),
+
+    /**
+     * 上传X7日志
+     */
+    X7_UPLOAD_LOG(CommonUser.VEHICLE_SERVICE_X7_LOG_UPLOAD, 18);
+
+    private String name;
+    private int position;
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    VehicleServiceEnum(String name, int position) {
+        this.name = name;
+        this.position = position;
+    }
+}
