@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>元素模式</title>
+
+    <style>
+        .k {
+            /* 块标签
+            1：可以设置款宽高
+            2：独占一行 
+            */
+            width: 500px;
+            height: 100px;
+            background-color: yellow;
+
+            /* 转换行内标签 */
+            display: inline;
+        }
+
+        .h {
+            /* 行内标签
+            1：不会换行
+            2：不能设置宽高，不生效
+            3：宽高由内容撑起来
+             */
+            width: 200px;
+            height: 200px;
+            background-color: rgb(200, 14, 14);
+
+            /* 转换块标签 */
+            display: block;
+        }
+
+        .hk {
+            width: 120px;
+            background-color: rgb(247, 6, 6);
+            padding: 1px;
+            /* 转换块标签 */
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 块标签 -->
+    <div class="k">我是div1</div>
+    <div class="k">我是div2</div>
+
+
+    <br>
+    <!-- 行内标签 -->
+    <span class="h">我是span1</span>
+    <span class="h">我是span2</span>
+
+    <br>
+    <br>
+    <!-- 行内块标签 -->
+    <img class="hk" src="../day03/images/1.jpg" alt="">
+    <img class="hk" src="../day03/images/1.jpg" alt="">
+
+</body>
+
+</html>
