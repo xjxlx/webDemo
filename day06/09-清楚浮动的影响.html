@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/common.css">
+
+    <title>清除浮动的影响</title>
+
+    <style>
+        .center {
+            margin: 0 auto;
+            width: 800px;
+            /* height: 200px; */
+            background-color: #008000;
+        }
+
+        .bottom {
+            margin: 0 auto;
+            width: 1000px;
+            height: 100px;
+            background-color: #3105f5;
+        }
+
+        .left {
+            float: left;
+            width: 400px;
+            height: 180px;
+            background-color: #889967;
+        }
+
+        .right {
+            float: right;
+            width: 300px;
+            height: 180px;
+            background-color: #f80303;
+        }
+
+        .clear {
+            clear: both;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 目标：上册 、下册、上册中包含着左右两个布局 -->
+
+    <div class="center">
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="bottom"></div>
+
+
+</body>
+
+</html>

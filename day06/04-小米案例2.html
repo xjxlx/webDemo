@@ -11,37 +11,78 @@
     <!-- 1:引入公共样式 -->
     <link rel="stylesheet" href="/common.css">
     <style>
-        .content {
+        .center {
             margin: 0 auto;
+            width: 1226px;
+            height: 614px;
+            margin-top: 100px;
         }
 
-        /* 2：左侧布局样式 */
         .left {
-            width: 234px;
             float: left;
+            width: 234px;
             height: 614px;
             background-color: #800080;
-
         }
 
-        /* 3：右侧的公共样式 */
         .right {
+            float: right;
+        }
+
+
+        .right_top {
+            background-color: #f50b0b;
+        }
+
+        .right_bottom {
+            margin-top: 14px;
+            background-color: #04f89b;
+        }
+
+        .item {
+            width: 234px;
+            height: 300px;
             margin-left: 14px;
+            margin-bottom: 14px;
+            background-color: #87ceeb;
             float: left;
-            background-color: yellow;
+        }
+
+        .item2 {
+            width: 234px;
+            height: 300px;
+            margin-left: 14px;
+            background-color: #87ceeb;
+            float: left;
         }
     </style>
 
 </head>
 
 <body>
-
-    <div class="content">
-
-        <!-- 1：left布局 -->
+    <!-- 所有布局的父类布局 -->
+    <div class="center">
         <div class="left"></div>
 
+        <div class="right">
+            <div class="right_top">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+            </div>
+
+            <div class="right_bottom">
+                <div class="item2">5</div>
+                <div class="item2">6</div>
+                <div class="item2">7</div>
+                <div class="item2">8</div>
+            </div>
+        </div>
+
+
     </div>
+
 
 </body>
 
