@@ -1,0 +1,41 @@
+/* 主背景颜色 */
+body {
+    background-color: #f3f5f7;
+}
+
+.logo {
+    width: 1200px;
+    height: 42px;
+    margin: 30px auto;
+}
+
+.logo img {
+    float: left;
+}
+
+.logo ul {
+    float: left;
+    margin-left: 60px;
+    list-style: none;
+}
+
+.logo ul li {
+    height: 42px;
+    margin-right: 24px;
+    display: inline-block;
+
+    /* 继承的属性 */
+    line-height: 42px;
+    font-size: 18px;
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+.logo ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.logo ul li:hover {
+    border-bottom: 2px solid #00a4ff;
+}
