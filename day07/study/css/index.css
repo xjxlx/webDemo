@@ -16,7 +16,7 @@ body {
     margin-top: 30px;
 }
 
-.logo .img {
+.logo>img {
     float: left;
 }
 
@@ -98,4 +98,133 @@ body {
     background-color: #050505;
     height: 420px;
     background-image: url(/day07/study/images/banner2.png);
+}
+
+.banner .left {
+    float: left;
+    height: 420px;
+    width: 190px;
+    background-color: rgba(00, 00, 00, 0.3);
+}
+
+/* 子代选择器 */
+.left>ul {
+    list-style: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.left>ul>li {
+    height: 44px;
+    font-size: 14px;
+    line-height: 44px;
+}
+
+.left>ul>li>a {
+    color: #ffffff;
+}
+
+.left>ul>li>a>span {
+    float: right;
+}
+
+.left>ul>li>a:hover {
+    color: #00a4ff;
+}
+
+/* todo 使用空格隔开的标签写法是什么 ？？ */
+.banner .right {
+    float: right;
+    width: 228px;
+    height: 300px;
+    background-color: #fff;
+    margin-top: 50px;
+}
+
+.right>div {
+    text-align: center;
+    line-height: 48px;
+    height: 48px;
+    color: white;
+    background-color: #9bceea;
+}
+
+.right>dl {
+    padding: 0 18px;
+}
+
+.right>dl>dt {
+    padding-top: 15px;
+}
+
+.right>dl>dd {
+
+    color: #4e4e4e;
+    font-size: 16px;
+}
+
+.right>dl>dd {
+    color: #a5a5a5;
+    font-size: 14px;
+    border-bottom: 2px solid #e5e5e5;
+    padding-bottom: 10px;
+}
+
+.right>a {
+    text-align: center;
+    margin: 0 14px;
+    margin-top: 4px;
+    display: block;
+    text-decoration: none;
+    height: 41px;
+    line-height: 41px;
+    color: #00a4ff;
+    border: 1px solid #00a4ff;
+}
+
+/* 精品推荐 */
+.goods {
+    margin: 0 auto;
+    margin-top: 8px;
+    width: 1200px;
+    height: 60px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 3px 0px rgba(118, 118, 118, 0.2);
+}
+
+.goods .left {
+    float: left;
+    font-size: 16px;
+    color: #00a4ff;
+    font-weight: 700px;
+    line-height: 60px;
+    padding-left: 34px;
+}
+
+.goods>ul {
+    float: left;
+    list-style: none;
+    margin-left: 34px;
+}
+
+.goods>ul>li {
+    float: left;
+    line-height: 60px;
+}
+
+.goods>ul>li>a {
+    border-left: 1px solid #bfbfbf;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #050505;
+}
+
+.goods>.right {
+    text-decoration: none;
+    margin-right: 26px;
+    line-height: 60px;
+    float: right;
+    font-size: 14px;
+    letter-spacing: 0px;
+    color: #00a4ff;
 }
