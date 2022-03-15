@@ -3,15 +3,20 @@ body {
     background-color: #f3f5f7;
 }
 
+/* 版心 */
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
 .logo {
     width: 1200px;
     height: 42px;
-    background-color: #dde6f0;
     margin: 0 auto;
     margin-top: 30px;
 }
 
-.logo img {
+.logo .img {
     float: left;
 }
 
@@ -43,3 +48,54 @@ body {
 }
 
 
+/* 搜索框 */
+.search input {
+    float: left;
+    width: 361px;
+    height: 38px;
+    /* background-color: #00a4ff; */
+    border: 1px solid #00a4ff;
+    margin-left: 71px;
+    font-size: 14px;
+    padding-left: 18px;
+}
+
+.search input::placeholder {
+    font-size: 14px;
+    color: #cecece;
+}
+
+.search img {
+    float: left;
+    height: 40px;
+}
+
+/* 个人 */
+.user {
+    height: 42px;
+    float: right;
+    margin-right: 35px;
+    line-height: 42px;
+}
+
+.user .img {
+    /* 用来处理图片的对齐方式 */
+    /* vertical-align  竖直居中 */
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+
+/* 轮播图的处理 */
+.banner {
+    height: 420px;
+    background-color: #1c036c;
+    margin-top: 29px;
+}
+
+/* 版心模块 */
+.banner .wrapper {
+    background-color: #050505;
+    height: 420px;
+    background-image: url(/day07/study/images/banner2.png);
+}
