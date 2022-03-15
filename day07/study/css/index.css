@@ -6,7 +6,9 @@ body {
 .logo {
     width: 1200px;
     height: 42px;
-    margin: 30px auto;
+    background-color: #dde6f0;
+    margin: 0 auto;
+    margin-top: 30px;
 }
 
 .logo img {
@@ -15,27 +17,29 @@ body {
 
 .logo ul {
     float: left;
-    margin-left: 60px;
     list-style: none;
+    margin-left: 60px;
 }
 
 .logo ul li {
-    height: 42px;
-    margin-right: 24px;
     display: inline-block;
-
-    /* 继承的属性 */
+    height: 42px;
     line-height: 42px;
-    font-size: 18px;
+    text-decoration: none;
+    margin-right: 24px;
+}
+
+.logo li a {
     padding-left: 9px;
     padding-right: 9px;
-}
-
-.logo ul li a {
+    color: #050505;
+    font-size: 18px;
     text-decoration: none;
-    color: #000;
+    height: 42px;
 }
 
-.logo ul li:hover {
+.logo li:hover {
     border-bottom: 2px solid #00a4ff;
 }
+
+
