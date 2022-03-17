@@ -3,7 +3,7 @@ body {
 }
 
 .head {
-    width: 100%;
+    /* width: 100%; */
     height: 40px;
     background-color: #2b303b;
     margin: 0 auto;
@@ -12,7 +12,6 @@ body {
 .head .content {
     width: 1200px;
     height: 40px;
-    background-color: #dbab9e;
     margin: 0 auto;
     position: relative;
 }
@@ -32,7 +31,6 @@ body {
     height: 40px;
     margin-left: 550px;
     list-style: none;
-    background-color: red;
     line-height: 40px;
 }
 
@@ -50,9 +48,188 @@ body {
     padding-left: 10px;
 }
 
+/* 去掉列表head_list中第一个li中的a的描边 */
+.head_list>li:first-child a {
+    border: none;
+}
 
-.head_list>li:first-child {}
 
-.head_list>li:first-child {
-    /* border: 2px solid rgb(41, 28, 28) */
+/* 中间的部分 */
+.warpper {
+    width: 100%;
+    height: 490px;
+    background-color: #181c28;
+}
+
+.warpper .content {
+    width: 1200px;
+    height: 490px;
+    margin: 0 auto;
+    background-color: #fff;
+    position: relative;
+}
+
+.warpper .content .left {
+    position: absolute;
+    z-index: 1;
+    width: 250px;
+    height: 100%;
+    background-color: #1b2a3f;
+}
+
+.warpper .content ul {
+    list-style: none;
+}
+
+.warpper .content li {
+    padding-top: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.warpper .content a {
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+
+.warpper .content a:hover {
+    color: skyblue;
+}
+
+
+.warpper .content span {
+    float: right;
+}
+
+.warpper .content .right {
+    height: 490px;
+    background-color: #fff;
+    /* top: 0px; */
+    /* left: 0px; */
+    position: absolute;
+}
+
+
+/* 轮播图下方的布局 */
+.second {
+    width: 100%;
+    height: 740px;
+    background-color: #fff;
+}
+
+.second .content {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.title {
+    display: block;
+    text-align: center;
+    /* background-color: rgb(220, 21, 21); */
+    padding-top: 45px;
+    font-size: 23px;
+    color: #000;
+}
+
+.xx {
+    text-align: center;
+    margin-top: 26px;
+    font-size: 15px;
+    color: #000;
+}
+
+.second .content .content {
+    margin-top: 30px;
+    height: 460px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    position: relative;
+}
+
+.second .content .content #title {
+    display: inline-block;
+    margin-top: 46px;
+    margin-left: 50px;
+    font-size: 26px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #000;
+}
+
+.second .content .content #content {
+    width: 442px;
+    margin-left: 50px;
+    margin-top: 18px;
+    font-size: 11px;
+    line-height: 19px;
+}
+
+#study {
+    margin-left: 50px;
+    display: inline-block;
+    /* background-color: rgb(240, 43, 43); */
+    padding-left: 48px;
+    padding-right: 48px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border: 2px solid #ffa500;
+    margin-top: 28px;
+    font-size: 15px;
+}
+
+.l_img {
+    position: absolute;
+    width: 580px;
+    right: 50px;
+    top: 40px;
+}
+
+/* 最底部的布局 */
+.footer {
+    width: 100%;
+    height: 400px;
+    background-color: #2e3033;
+}
+
+
+.footer .content {
+    margin: 0 auto;
+    width: 1200px;
+    height: 100%;
+    /* background-color: rgb(226, 38, 38); */
+}
+
+.footer .content dl {
+    width: 198px;
+    margin-top: 34px;
+    float: left;
+}
+
+.footer .content dt {
+    font-size: 14px;
+    color: white;
+}
+
+
+.footer .content dd {
+    margin-top: 10px;
+    font-size: 12px;
+    color: white;
+}
+
+.right2 {
+    /* margin-top: 34px;
+     */
+    padding-top: 34px;
+    color: white;
+}
+
+.buy {
+    margin-top: 24px;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: #00a4ff;
+    padding: 12px 72px;
 }
