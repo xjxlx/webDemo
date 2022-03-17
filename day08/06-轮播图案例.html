@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+
+    <style>
+        .banner {
+            width: 1226px;
+            height: 600px;
+            margin: 0 auto;
+
+            position: relative;
+        }
+
+        .mark {
+            position: absolute;
+            height: 150px;
+            width: 100%;
+            /* 1:绝对布局的元素会具有行内块的特性，可以设置宽高，但是如果没有宽高也没有内容，则模式0 
+                2:如果宽度或者高度和父布局相同，可以使用 width = 100% 去控制
+            */
+            background-color: rgba(0, 0, 0, 0.5);
+            bottom: 0px;
+            left: 0px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="banner">
+
+        <img src="./imges/bg.jpg" alt="">
+        <div class="mark"></div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+body {
+    background-color: #2e3033;
+}
+
+.head {
+    width: 100%;
+    height: 40px;
+    background-color: #2b303b;
+    margin: 0 auto;
+}
+
+.head .content {
+    width: 1200px;
+    height: 40px;
+    background-color: #dbab9e;
+    margin: 0 auto;
+    position: relative;
+}
+
+.logo {
+    /* 上下居中 */
+    width: 78px;
+    height: 18px;
+    vertical-align: middle;
+    line-height: 18px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.head_list {
+    height: 40px;
+    margin-left: 550px;
+    list-style: none;
+    background-color: red;
+    line-height: 40px;
+}
+
+.head_list>li {
+    float: left;
+}
+
+
+.head_list>li>a {
+    border-left: 2px solid white;
+    font-size: 15px;
+    text-decoration: none;
+    color: white;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+
+.head_list>li:first-child {}
+
+.head_list>li:first-child {
+    /* border: 2px solid rgb(41, 28, 28) */
+}
