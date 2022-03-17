@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content {
+            margin: 0 auto;
+            margin-top: 30px;
+            width: 500px;
+            height: 400px;
+            background: rgb(184, 77, 77);
+        }
+
+        .second {
+            margin: 0 auto;
+            width: 300px;
+            height: 300px;
+            background: rgb(17, 28, 171);
+            position: relative;
+            left: 0px;
+            top: 0px
+        }
+
+        .bgc {
+            display: block;
+            background-color: #fff;
+            width: 227px;
+            height: 269px;
+            margin: 0 auto;
+        }
+
+        .hot {
+            /* position: absolute;
+            right: 32.5px;
+            top: 4px; */
+            /*  1:根据子绝父相的方法，定位孩子，父类也需要定位
+                2：孩子一般使用绝对定位方式
+                3：父类使用相对定位的方式，如果孩子不定位的话，那么left的属性值则不起作用
+                4:绝对定位是从当前位置开始计算的
+                5:如果写left:则从左侧开始计算，不计算自身的位置，如果从right写，则从右侧计算自身的位置，不算自身。。。。
+                6:使用的时候，如果靠近那边，则从那边计算比较的方便
+            */
+
+            position: relative;
+            left: 227.5px;
+            bottom: 265px;
+            /*
+                1:相对于自身原来的位置去移动的
+                2:相对定位，需要计算自身的宽高
+                3:如果是left:计算方式：(父布局宽度300 - item宽度227) / 2 =36.5(两边的各自间距) + item的宽度 - hot自身的宽度40+ 真正的右侧边距4px
+                4:如果想往上去，就要计算bottom,才能往上提，bottom计算方式：item的高度269 - 真正需要的高度4 = 265     
+                5:相对定位，是相对于自身的定位，计算位置要相反才可以        
+            */
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="content">
+        <div class="second">
+            <img class="bgc" src="/day07/study/images/bottom03.jpg" alt="">
+            <img class="hot" src="/day07/study/images/hot.png" alt="">
+        </div>
+
+    </div>
+
+</body>
+
+</html>
