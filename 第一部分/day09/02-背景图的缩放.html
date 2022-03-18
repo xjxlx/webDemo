@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+
+    <style>
+        .content {
+            width: 400px;
+            height: 300px;
+            background-color: rgb(170, 20, 20);
+
+            background-image: url(./images/1.jpg);
+
+            /* 不填充图片 */
+            background-repeat: no-repeat;
+
+            /* 会自动缩放到宽或者高铺满全屏位置，但是如果宽高比例和图片比例不一致，可能会留白 */
+            /* background-size: contain; */
+
+            /* 会直接铺满全屏，如果宽高比例不一致，则会有部分被隐藏 */
+            /* background-size: cover; */
+
+            /* 固定尺寸的写法 */
+            /* background-size: 200px 100px; */
+
+
+            /* 相对于整个图片的宽高 */
+            background-size: 50% 50%;
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="content"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+/* 各个页面相同的样式表 : 头, 尾部 */
+/* 版心 */
+.wrapper {
+    width: 1240px;
+    margin: 0 auto;
+}
+
+/* 快捷导航 */
+.shortcut {
+    height: 52px;
+    background-color: #333;
+}
+
+.shortcut .wrapper {
+    height: 52px;
+}
+
+/* 目的: 所有的文字内容居右侧对齐 */
+.shortcut .wrapper ul {
+    float: right;
+}
+
+.shortcut .wrapper li {
+    /* 文字横向显示 */
+    float: left;
+    /* 文字垂直居中 */
+    line-height: 52px;
+}
+
+.shortcut .wrapper a {
+    /* 文字的做间距 */
+    padding-left: 16px;
+    /* 文字大小和颜色 */
+    font-size: 14px;
+    color: #dcdcdc;
+    padding-right: 16px;
+    /* 右侧的竖线，写在这里，是因为文字是属于行标签，没有默认的高度 */
+    border-right: 1px solid #666;
+}
+
+
+/* 手机的图标，这里使用span是因为要和手机保持一行不去自动换行 */
+.shortcut .wrapper span {
+    width: 11px;
+    height: 16px;
+    background-image: url(../images/sprites.png);
+    background-position: -160px -70px;
+    /* 设置行内块模式，让span具有宽高的属性 */
+    display: inline-block;
+    vertical-align: middle;
+    /* 手机和文字的间距 */
+    margin-right: 8px;
+}
+
+
+/* 清除最后一个竖线 */
+.shortcut .wrapper li:last-child a {
+    border: none;
+}
+
+/* 头部 */
+.header {
+    height: 130px;
+    background-color: #fff;
+}
+
+.header .wrapper {
+    /* background-color: rgb(246, 197, 197); */
+    height: 130px;
+    position: relative;
+}
+
+.logo {
+    /* background-color: rgb(183, 21, 21); */
+    float: left;
+    width: 207px;
+    height: 70px;
+    margin-top: 30px;
+}
+
+.header .wrapper ul {
+    /* background-color: rgb(234, 136, 8); */
+    float: left;
+    margin-top: 53px;
+}
+
+.header .wrapper li {
+    float: left;
+}
+
+.header .wrapper a {
+    margin-left: 24px;
+    margin-right: 24px;
+    font-size: 16px;
+    padding-bottom: 8px;
+    color: #333333;
+}
+
+.header .wrapper a:hover {
+    color: #27ba9b;
+    border-bottom: 1px solid #27ba9b;
+}
+
+/* 搜索 */
+.search {
+    margin-left: 58px;
+    float: left;
+    margin-top: 54px;
+    width: 172px;
+    height: 30px;
+    border-bottom: 2px solid #f2f2f2;
+    vertical-align: middle;
+}
+
+.search_img {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    background-image: url(../images/sprites.png);
+    background-position: -79px -69px;
+    vertical-align: middle;
+}
+
+.input_search {
+    width: 138px;
+    margin-left: 11px;
+    font-size: 14px;
+}
+
+/* 搜索站位的css */
+.input_search ::placeholder {
+    font-size: 14px;
+    color: #cccccc;
+}
+
+
+/* 购物车 */
+.header .shopping {
+    float: right;
+    margin-right: 12px;
+    /* background-color: rgb(238, 214, 214); */
+    margin-top: 58px;
+    position: relative;
+}
+
+.shopping .shopping_img {
+    width: 23px;
+    height: 23px;
+    background-image: url(../images/sprites.png);
+    background-position: -120px -70px;
+}
+
+.shopping .shopping_num {
+    position: absolute;
+    right: -10px;
+    top: -5px;
+    text-align: center;
+    line-height: 15px;
+    display: block;
+    width: 20px;
+    height: 15px;
+    background-color: #e26237;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #ffffff;
+}
