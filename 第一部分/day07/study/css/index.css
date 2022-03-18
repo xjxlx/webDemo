@@ -109,7 +109,7 @@ body {
 .banner .wrapper {
     background-color: #050505;
     height: 420px;
-    background-image: url(/day07/study/images/banner2.png);
+    background-image: url(../images/banner2.png);
 }
 
 .banner .left {
