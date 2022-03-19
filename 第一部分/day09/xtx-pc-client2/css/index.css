@@ -205,7 +205,7 @@
 
 .goods ul {
     vertical-align: middle;
-    float: right;
+    float: left;
 }
 
 .goods li {
@@ -216,37 +216,3 @@
 .goods .sx_query_all {
     float: right;
 }
-
-
-
-
-
-
-
-
-
-
-/* 生鲜 */
-/* .goods .sx {
-    margin-top: 34px;
-    background-color: rgb(51, 240, 13);
-}
-
-.goods .sx_title {
-    font-size: 29px;
-    color: #333333;
-    float: left;
-}
-
-.goods .sx ul {
-    float: right;
-}
-
-.goods .sx li {
-    float: left;
-}
-
-
-.goods .sx .sx_query_all {
-    float: right;
-} */
