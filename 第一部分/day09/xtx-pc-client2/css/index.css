@@ -119,3 +119,134 @@
 .indicator li:nth-child(3) {
     background-color: #fff;
 }
+
+
+/* 商品列表 */
+
+.goods {
+    background-color: #fff;
+}
+
+.goods {
+    width: 1240px;
+    padding-top: 50px;
+}
+
+
+.goods_title {
+    font-size: 29px;
+    color: #333333;
+}
+
+.goods_title2 {
+    font-size: 16px;
+    color: #999999;
+    margin-left: 15px;
+}
+
+.goods_query_all {
+    float: right;
+    font-size: 16px;
+    color: #999999;
+}
+
+/* 商品列表 */
+.goods .list {
+    margin-top: 38px;
+}
+
+.goods .list ul {
+    display: inline-block;
+    background-color: #fff;
+}
+
+.goods .list li {
+    margin-right: 8px;
+    float: left;
+    width: 304px;
+    background-color: #f0f9f4;
+}
+
+.goods .list li:last-child {
+    margin-right: 0;
+}
+
+.goods .list img {
+    width: 304px;
+}
+
+.goods .list p {
+    font-size: 20px;
+    color: #333333;
+    text-align: center;
+    margin-top: 23px;
+}
+
+.goods .list span {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+    font-size: 23px;
+    color: #9a2e1f;
+}
+
+.sx {
+    margin-top: 34px;
+    background-color: rgb(15, 245, 134);
+}
+
+.goods .sx_left {
+    float: left;
+    font-size: 29px;
+    color: #333333;
+    float: left;
+}
+
+.goods ul {
+    vertical-align: middle;
+    float: right;
+}
+
+.goods li {
+    float: left;
+}
+
+
+.goods .sx_query_all {
+    float: right;
+}
+
+
+
+
+
+
+
+
+
+
+/* 生鲜 */
+/* .goods .sx {
+    margin-top: 34px;
+    background-color: rgb(51, 240, 13);
+}
+
+.goods .sx_title {
+    font-size: 29px;
+    color: #333333;
+    float: left;
+}
+
+.goods .sx ul {
+    float: right;
+}
+
+.goods .sx li {
+    float: left;
+}
+
+
+.goods .sx .sx_query_all {
+    float: right;
+} */
