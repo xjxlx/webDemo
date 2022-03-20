@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>双开门</title>
+
+    <style>
+        .content {
+            margin: 50px auto;
+            width: 1366px;
+            height: 600px;
+            background-image: url(./images/bg.jpg);
+            transition: all 1s;
+
+            /* 超出的部分就隐藏 */
+            overflow: hidden;
+        }
+
+        /* .left {
+            float: left;
+            width: 50%;
+            height: 600px;
+            background-image: url(./images/fm.jpg);
+            transition: all 1s;
+        } */
+
+
+        /* .right {
+            float: right;
+            width: 50%;
+            height: 600px;
+            background-image: url(./images/fm.jpg);
+            background-position: right;
+            transition: all 1s;
+        } */
+
+
+        /* .content:hover .left {
+            transform: translateX(-100%);
+        }
+
+        .content:hover .right {
+            transform: translateX(100%);
+        } */
+
+
+        /* 第二种做法 */
+
+        /* .content::before,
+        ::after {
+            background-image: url(./images/fm.jpg);
+        } */
+
+        .content::before,
+        ::after {
+            content: "";
+            float: left;
+            width: 50%;
+            height: 100%;
+            background-image: url(./images/fm.jpg);
+            display: block;
+            background-color: rgb(6, 236, 79);
+            transition: all 1s;
+        }
+
+        .content::after {
+            background-position: right;
+        }
+
+        .content:hover::before {
+            transform: translateX(-100%);
+        }
+
+        .content:hover::after {
+            transform: translateX(100%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="content">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+
+</body>
+
+</html>
