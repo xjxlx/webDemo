@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .father {
+      width: 400px;
+      background-color: pink;
+    }
+
+    img {
+      /* vertical-align: middle; */
+      display: block;
+    }
+
+    /* 1：父类不设置高度，应该高度是由子类撑开的高度决定的
+       2：子类的高度是300 * 300 默认应该是贴满父布局的
+       3：如果什么都不设置则会底部默认有些间距，因为浏览器解析行内和行内块标签，会当成文字类型，按照基线的位置去对齐
+       4:解决这个问题，有两种处理方式
+          1：图片设置成块模式，更改显示方式
+          2：更改图片的对齐方式为 vertical-align: middle
+     */
+  </style>
+</head>
+
+<body>
+  <div class="father">
+    <img src="/day08/imges/1.jpg" alt="">
+  </div>
+</body>
+
+</html>
