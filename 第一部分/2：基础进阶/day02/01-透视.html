@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>透视</title>
+
+
+
+    <style>
+        body {
+            /* perspective */
+        }
+
+        .parent {
+            perspective: 1200px;
+        }
+
+        .child {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(225, 27, 27);
+            margin: 50px auto;
+        }
+
+        .child:hover {
+            /* 
+            取值范围：800-1200
+            正数变大，负数变小 */
+            transform: translateZ(10px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="parent">
+
+        <div class="child"></div>
+    </div>
+
+</body>
+
+</html>
