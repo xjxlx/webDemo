@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>渐变</title>
+
+    <style>
+        .parent {
+            width: 800px;
+            height: 500px;
+            background-color: rgb(230, 59, 59);
+
+            margin: 50px auto;
+        }
+
+        .child {
+            width: 400px;
+            height: 500px;
+            margin: 50px auto;
+
+            position: relative;
+        }
+
+        .img {
+            border: 1px solid #000;
+            width: 300px;
+            height: 210px;
+            background-image: url(./images/product.jpeg);
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            position: relative;
+        }
+
+
+        span {
+            padding-left: 20px;
+            padding-right: 20px;
+            color: white;
+            position: absolute;
+            bottom: 15px;
+
+            /* 提高显示层级，不然会连文字也会跟着变暗 */
+            z-index: 2;
+        }
+
+        .mask {
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            width: 300px;
+            height: 210px;
+            /* 背景渐变 */
+            background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+
+            opacity: 0;
+            transition: all 0.5s;
+        }
+
+
+        .mask:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="parent">
+        <div class="child">
+            <div class="img">
+                <span>OceanStor Pacific 海量存储斩获2021 Interop金奖</span>
+            </div>
+
+            <div class="mask"></div>
+        </div>
+</body>
+
+</html>

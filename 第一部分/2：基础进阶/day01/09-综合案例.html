@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>综合案例</title>
+    <style>
+        .parent {
+            width: 1200px;
+            margin: 50px auto;
+            background-color: rgb(253, 44, 44);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+
+        .child {
+            float: left;
+            width: 350px;
+            height: 247px;
+            margin-left: 20px;
+            background-image: url(./images/huawei1.jpeg);
+            background-size: contain;
+            position: relative;
+
+            transition: all 0.5s;
+        }
+
+        p {
+            position: absolute;
+            margin-left: 20px;
+            color: white;
+            left: 0;
+            bottom: -40px;
+            transition: all 0.5s;
+
+            z-index: 2;
+        }
+
+
+        li:hover .mask {
+            opacity: 1;
+        }
+
+        li:hover p {
+            bottom: 0;
+        }
+
+        li:hover .child {
+            transform: scale(1.2);
+        }
+
+        .mask {
+            width: 350px;
+            height: 247px;
+            background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+            position: absolute;
+            left: 0;
+            bottom: 0;
+
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="parent">
+        <ul>
+            <li><a href="#">
+                    <div class="child">
+                        <p>OceanStor Pacific 海量存储斩获<br><br>2021 Interop金奖</p>
+                        <div class="mask"></div>
+                    </div>
+                    <div class="child">
+                        <p>OceanStor Pacific 海量存储斩获<br><br>2021 Interop金奖</p>
+                        <div class="mask"></div>
+                    </div>
+                    <div class="child">
+                        <p>OceanStor Pacific 海量存储斩获<br><br>2021 Interop金奖</p>
+                        <div class="mask"></div>
+                    </div>
+
+                </a></li>
+        </ul>
+
+
+        <!-- 
+                <li><a href="#"><img class="img" src="./images/product.jpeg" alt="">
+                    </a>
+                </li>
+
+                <li><a href="#"><img class="img" src="./images/huawei1.jpeg" alt="">
+                        <p>OceanStor Pacific 海量存储斩获<br><br>2021 Interop金奖
+                        </p>
+                    </a>
+                </li>
+                <li><a href="#"><img class="img" src="./images/huawei2.jpeg" alt="">
+                        <p>OceanStor Pacific 海量存储斩获<br><br>2021 Interop金奖
+                        </p>
+                    </a>
+                </li> -->
+        </ul>
+    </div>
+</body>
+
+</html>
