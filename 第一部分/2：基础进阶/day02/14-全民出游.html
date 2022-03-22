@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>全民出游</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
         html {
             height: 100%;
         }
@@ -21,23 +26,192 @@
         */
         .bg {
             height: 100%;
-            background-image: url(./images/f1_1.jpg);
-            background-repeat: no-repeat;
+            /* 属性连写 */
+            background: url(./images/f1_1.jpg) no-repeat center;
             background-size: cover;
-        }
-
-        .yuncai {
-            background: #000;
-            width: 30%;
-            margin: 0 auto;
             position: relative;
         }
 
-        .yuncai:nth-child(1) {
+        .yuncai {
+            /* background: rgb(221, 30, 30); */
+            margin: 0 auto;
+            width: 20%;
+            height: 20%;
+            position: relative;
+        }
+
+        .img1 {
             position: absolute;
-            left: 20px;
+            left: 0;
             top: 20px;
-            background-color: #fff;
+            animation: yun_move 5s infinite alternate linear;
+        }
+
+        .img2 {
+            position: absolute;
+            left: 500px;
+            top: 120px;
+            animation: yun_move 5s infinite alternate linear 2s;
+        }
+
+        .img3 {
+            position: absolute;
+            left: -350px;
+            top: 220px;
+            animation: yun_move 5s infinite alternate linear 5s;
+        }
+
+        /* 云彩动画 */
+        @keyframes yun_move {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(100px);
+            }
+        }
+
+        /* 气球 */
+        .qiqiu {
+            background-image: url(./images/san.png);
+            width: 133px;
+            height: 171px;
+            position: absolute;
+            left: 25%;
+            top: 20%;
+            animation: animation_qiqiu 2s linear infinite alternate;
+        }
+
+        @keyframes animation_qiqiu {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-50px);
+            }
+        }
+
+
+        /* 小鹿 */
+        .xiaolu {
+            background-image: url(./images/lu.png);
+            width: 204px;
+            height: 200px;
+            background-size: contain;
+            position: absolute;
+            left: 59%;
+            top: 18.5%;
+        }
+
+        /* 海报 */
+        .haibao {
+            background-image: url(./images/font1.png);
+            width: 647px;
+            height: 287px;
+            position: absolute;
+            left: 29%;
+            top: 30%;
+            z-index: 1;
+
+            /* 动画名字 */
+            animation-name: anmition_haibao;
+            /* 持续时间 */
+            animation-duration: 1s;
+            /* 运动速率 */
+            animation-timing-function: ease;
+            /* 结束的停留状态 forwards：第一帧 */
+            animation-fill-mode: backwards;
+        }
+
+        /* 海报动画 */
+        @keyframes anmition_haibao {
+            /* from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.5);
+            } */
+
+            0% {
+                transform: scale(1);
+            }
+
+            20% {
+                transform: scale(0);
+            }
+
+            40% {
+                transform: scale(1.4);
+            }
+
+            70% {
+                transform: scale(0.8);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+
+        /* 底部气球 */
+        .reqiqiu {
+            margin: 0 auto;
+            position: absolute;
+            width: 58%;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .rqq1 {
+            margin-left: 13px;
+            float: left;
+            width: 134px;
+            height: 168px;
+            background-image: url(./images/1.png);
+
+            animation: anmotion_bottom_reqiqiu 1s ease infinite alternate;
+        }
+
+        .rqq2 {
+            margin-left: 105px;
+            float: left;
+            width: 134px;
+            height: 168px;
+            background-image: url(./images/2.png);
+            animation: anmotion_bottom_reqiqiu 1s ease infinite alternate 0.3s;
+        }
+
+        .rqq3 {
+            margin-left: 105px;
+            float: left;
+            width: 134px;
+            height: 168px;
+            background-image: url(./images/3.png);
+            animation: anmotion_bottom_reqiqiu 1s ease infinite alternate 0.5s;
+        }
+
+        .rqq4 {
+            margin-left: 105px;
+            float: left;
+            width: 134px;
+            height: 168px;
+            background-image: url(./images/4.png);
+            animation: anmotion_bottom_reqiqiu 1s ease infinite alternate 0.2s;
+        }
+
+        @keyframes anmotion_bottom_reqiqiu {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-50px);
+            }
         }
     </style>
 </head>
@@ -46,12 +220,22 @@
 
     <div class="bg">
         <div class="yuncai">
-            <img src="./images/yun1.png" alt="">
-            <img src="./images/yun2.png" alt="">
-            <img src="./images/yun3.png" alt="">
+            <img class="img1" src="./images/yun1.png" alt="">
+            <img class="img2" src="./images/yun2.png" alt="">
+            <img class="img3" src="./images/yun3.png" alt="">
         </div>
 
+        <div class="qiqiu"></div>
+        <div class="haibao"></div>
+        <div class="xiaolu"></div>
 
+
+        <span class="reqiqiu">
+            <div class="rqq1"></div>
+            <div class="rqq2"></div>
+            <div class="rqq3"></div>
+            <div class="rqq4"></div>
+        </span>
     </div>
 
 </body>
