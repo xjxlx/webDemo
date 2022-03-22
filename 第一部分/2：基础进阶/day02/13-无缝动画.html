@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>无缝动画</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            width: 600px;
+            height: 125px;
+            /* background-color: rgb(248, 0, 0); */
+            margin: 150px auto;
+            border: 5px solid #000;
+
+            overflow: hidden;
+        }
+
+        ul {
+            list-style: none;
+            width: 2000px;
+            height: 125px;
+            background-color: rgb(5, 9, 243);
+
+            /* 动画名字 */
+            animation-name: move;
+            /* 动画时间 */
+            animation-duration: 5s;
+            /* 动画重复次数 ---> 无限轮播 */
+            animation-iteration-count: infinite;
+            /* 匀速运动 */
+            animation-timing-function: linear;
+        }
+
+        li {
+            float: left;
+        }
+
+        img {
+            width: 200px;
+            height: 125px;
+            background-size: cover;
+        }
+
+        @keyframes move {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                /* 无缝动画的精髓：这里只走到显示的区域，ul的区域比这个大，从头再来的话，正好不会漏出来空白的地方 */
+                transform: translateX(-1400px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="content">
+        <ul class="h-list">
+            <li><img src="./images/1.jpg" alt=""> </li>
+            <li><img src="./images/2.jpg" alt=""> </li>
+            <li><img src="./images/3.jpg" alt=""> </li>
+            <li><img src="./images/4.jpg" alt=""> </li>
+            <li><img src="./images/5.jpg" alt=""> </li>
+            <li><img src="./images/6.jpg" alt=""> </li>
+            <li><img src="./images/7.jpg" alt=""> </li>
+            <li><img src="./images/1.jpg" alt=""> </li>
+            <li><img src="./images/2.jpg" alt=""> </li>
+            <li><img src="./images/3.jpg" alt=""> </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

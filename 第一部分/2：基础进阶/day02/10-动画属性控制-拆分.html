@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(228, 16, 16);
+            margin: 50px auto;
+
+
+            /* animation: change 1s timing-function delay iteration-count direction fill-mode; */
+
+            /* 动画名称  执行时间 速度曲线（插值器） 延迟时间 重复次数 动画方向 执行完毕状态 */
+            /* animation: change 1s linear 2s infinite; */
+
+            /* 重复次数 ---> infinite：无限循环 */
+            /* animation: change 2s 2s infinite; */
+
+            /* 动画方向 ---> alternate 为反向 */
+            /* animation: change 2s infinite alternate; */
+
+            /* 完成时候的状态 --> forwards:最后的方向 backwards ：开始时候的方向  */
+            /* animation: change 2s 3 alternate backwards; */
+            animation-name: change;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            animation-direction: backwards;
+            animation-iteration-count: 3;
+        }
+
+        @keyframes change {
+            from {
+                width: 200px;
+            }
+
+            to {
+                width: 400px;
+            }
+        }
+
+
+        div:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>我是标准盒子</div>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>精灵动画</title>
+
+    <style>
+        .content {
+            /* 盒子尺寸的宽高 = 一个内容的宽高 */
+            width: 140px;
+            height: 140px;
+            /* 设置精灵图内容 */
+            background-image: url(./images/bg.png);
+
+            /* 开启动画 */
+
+            /* 动画名字*/
+            animation-name: move;
+            /* 动画持续时间 */
+            animation-duration: 1s;
+            /* 动画的插值器（速率),值为精灵图内容的个数*/
+            animation-timing-function: steps(12);
+            /* 无限循环 */
+            animation-iteration-count: infinite;
+
+            animation: name duration timing-function delay iteration-count direction fill-mode;
+            animation:
+                move 1s steps(12) infinite,
+                run 1s forwards;
+        }
+
+        @keyframes move {
+            to {
+                /* 数值为正，会内容倒着来 */
+                background-position: -1680px 0;
+            }
+        }
+
+
+        @keyframes run {
+            to {
+                transform: translateX(800px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content"></div>
+</body>
+
+</html>

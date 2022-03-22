@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全民出游</title>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+        }
+
+        /*  1：如果要使用父类的100%高度的话，首先要保证上一层级里面有高度，依次往上去排查
+            2：排查顺序为： body内标签 ---> body标签  ---> html 标签
+            3：哪一层缺失，就给哪一层补齐一个高度，最高的就是html标签
+        */
+        .bg {
+            height: 100%;
+            background-image: url(./images/f1_1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .yuncai {
+            background: #000;
+            width: 30%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .yuncai:nth-child(1) {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg">
+        <div class="yuncai">
+            <img src="./images/yun1.png" alt="">
+            <img src="./images/yun2.png" alt="">
+            <img src="./images/yun3.png" alt="">
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
