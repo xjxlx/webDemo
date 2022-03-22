@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导航条旋转</title>
+
+    <style>
+        .parent {
+            width: 500px;
+            height: 200px;
+            margin: 50px auto;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            float: left;
+            border: 1px solid rgb(2, 47, 245);
+        }
+
+        a {
+            /* 启动3d效果 */
+            transform-style: preserve-3d;
+            transition: all 1s;
+
+            text-decoration: none;
+            position: relative;
+            display: block;
+
+            /* 临时转动，避免看不见效果 */
+            /* transform: rotateX(-20deg)rotateY(30deg); */
+        }
+
+        a>div {
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .first {
+            background-color: rgb(14, 248, 5);
+
+            transform: rotateX(90deg)translateZ(25px);
+        }
+
+        .last {
+            background-color: rgb(240, 144, 1);
+            transform: translateZ(25px);
+
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        a:hover {
+            transform: rotateX(-90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <ul>
+            <li>
+                <a href="#">
+                    <div class="first">home</div>
+                    <div class="last">首页</div>
+                </a>
+            </li>
+            <li><a href="#">
+                    <div class="first">login</div>
+                    <div class="last">登录</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="first">register</div>
+                    <div class="last">注册</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+</body>
+
+</html>

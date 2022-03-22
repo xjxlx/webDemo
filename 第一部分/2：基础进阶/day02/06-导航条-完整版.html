@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .parent {
+            width: 400px;
+            height: 200px;
+            /* background-color: rgb(230, 6, 6); */
+            margin: 50px auto;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            float: left;
+        }
+
+        a {
+            text-decoration: none;
+            /* 必须是盒子才可以执行动画 */
+            display: block;
+
+            position: relative;
+            /* 启动3d动画功能，否则无法显示3d的效果 */
+            transform-style: preserve-3d;
+
+            /* 扭曲父标签，达到可视效果 */
+            /* transform: rotateX(-30deg)rotateY(30deg); */
+
+            /* 过渡动画 */
+            transition: all 1s;
+        }
+
+        a div {
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        .up {
+            background-color: rgb(250, 104, 6);
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            /* 先平铺，然后再把Z轴顶上去 */
+            transform: rotateX(90deg)translateZ(25px);
+        }
+
+        .next {
+            background-color: rgb(26, 255, 5);
+
+            /* 下方的view往前移动 */
+            transform: translateZ(25px);
+        }
+
+        a:hover {
+            /* 旋转X轴90度 */
+            transform: rotateX(-90deg);
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 1：需要有两个小标签在一起 -->
+    <div class="parent">
+        <ul>
+            <li>
+                <a href="#">
+                    <div class="up">homeIndex</div>
+                    <div class="next">首页</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="up">loign</div>
+                    <div class="next">登录</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="up">register</div>
+                    <div class="next">注册</div>
+                </a>
+            </li>
+        </ul>
+
+</body>
+
+</html>

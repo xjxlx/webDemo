@@ -10,17 +10,15 @@
         .parent {
             width: 200px;
             height: 200px;
-            background-color: red;
             margin: 60px auto;
 
             position: relative;
-
-            transition: all 2s;
+            transition: all 5s;
             /* 启动3d效果模式 */
             transform-style: preserve-3d;
         }
 
-        .up div {
+        .parent div {
             position: absolute;
             top: 0;
             left: 0;
@@ -39,7 +37,7 @@
         }
 
         .parent:hover {
-            transform: rotateY(90deg)
+            transform: rotateY(270deg)
         }
     </style>
 </head>
