@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        .box {
+            width: 320px;
+            height: 600px;
+            background-color: pink;
+
+            /* 修改布局为弹性布局 */
+            display: flex;
+            /* 注意：因为flex为弹性布局，默认里面的子标签会挤压宽度一行排列，所以，默认会改变子标签的宽度
+            */
+
+            /* 从下到上 */
+            /* flex-wrap: wrap-reverse; */
+
+            /* 不换行，默认的展示方式 */
+            /* flex-wrap: nowrap; */
+
+            /* 换行 */
+            flex-wrap: wrap;
+
+            /* 调整换行方式 */
+
+            /* 居中显示 */
+            /* align-content: center; */
+
+            /* 居上 */
+            /* align-content: flex-start; */
+
+            /* 居下 */
+            /* align-content: flex-end; */
+
+            /* 中间空白多，两边空白少 */
+            /* align-content: space-around; */
+
+            /* 居两端，中间平分 */
+            align-content: space-between;
+
+        }
+
+        .box div {
+            /* border: 1px solid #000; */
+            width: 100px;
+            height: 100px;
+            background-color: rgb(82, 247, 5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+
+</body>
+
+</html>
