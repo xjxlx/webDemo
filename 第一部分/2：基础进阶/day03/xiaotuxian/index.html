@@ -18,6 +18,36 @@
             background-color: #f7f7f8;
         }
 
+
+
+        /* 公共的圆角 */
+        .radius {
+            border-radius: 5px;
+            margin-left: 11px;
+            margin-right: 11px;
+        }
+
+        /* 公共字体item */
+        .itemfont {
+            font-size: 13px;
+            color: #262626;
+            display: flex;
+            padding-right: 15px;
+            padding-left: 13px;
+            /* 左右靠两侧 */
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .header {
+            width: 100%;
+            height: 85px;
+        }
+
+        .center {
+            padding-bottom: 90px;
+        }
+
         /* 底部布局 */
         .footer {
             /* 固定布局 */
@@ -31,7 +61,6 @@
 
             /* 启动flex布局 */
             display: flex;
-
 
             /* 竖向居中 */
             align-items: center;
@@ -69,17 +98,12 @@
             border-radius: 3px;
         }
 
-        .header {
-            width: 100%;
-            height: 85px;
-        }
 
         /* 个人信息 */
         .user {
             margin-top: 12px;
             background-color: white;
             height: 100%;
-            border-radius: 5px;
 
             /* flex布局 */
             display: flex;
@@ -87,9 +111,6 @@
             align-items: center;
             /* 左右靠两侧 */
             justify-content: space-between;
-
-            margin-left: 11px;
-            margin-right: 11px;
         }
 
         /* 左侧定位 */
@@ -121,7 +142,7 @@
             margin-left: 12px;
         }
 
-        .info {
+        .user .info {
             display: flex;
             /* 竖向对齐 */
             align-items: center;
@@ -144,9 +165,131 @@
             color: #333333;
             line-height: 18px;
         }
+
+        /* 商品信息 */
+        .goods {
+            display: flex;
+            margin-top: 9px;
+            background-color: white;
+
+            /* 横向左右排列 */
+            justify-content: space-between;
+        }
+
+
+        /* 商品图片 */
+        .goods .cover {
+            background-image: url(./uploads/pic.png);
+            width: 85px;
+            height: 85px;
+            margin: 11px;
+            border-radius: 2px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* 商品内容 */
+        .goods .infos {
+            margin-top: 11px;
+            /* 占据一整行 */
+            flex: 1;
+        }
+
+        .goods .infos .title {
+            font-size: 13px;
+            line-height: 19px;
+            color: #262626;
+        }
+
+        .goods .infos .lab {
+            margin-top: 7px;
+            font-size: 11px;
+            color: #888888;
+            background-color: #f7f7f8;
+            border-radius: 2px;
+            padding: 3px 4px;
+            display: inline-block;
+        }
+
+        /* 价格 */
+        .infos .price {
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .infos .price_real {
+            font-size: 9px;
+            color: #cf4444;
+        }
+
+        .infos .price_real_value {
+            font-size: 16px;
+        }
+
+        .infos .price_original {
+            font-size: 9px;
+            color: #999999;
+            margin-left: 14px;
+            /* 删除属性 */
+            text-decoration: line-through;
+        }
+
+        .infos .price_original_value {
+            font-size: 12px;
+        }
+
+        .goods .number {
+            margin-top: 11px;
+            width: 44px;
+            height: 44px;
+            text-align: center;
+            line-height: 44px;
+        }
+
+        /* 配送方式 */
+        .distribution {
+            margin-top: 6px;
+            background-color: white;
+            padding-top: 14px;
+            padding-bottom: 16px;
+        }
+
+        /* 清除最后一个的item高度 */
+        .itemfont:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 单独处理配送的第二个 */
+        .distribution .itemfont:nth-child(2) {
+            justify-content: flex-start;
+        }
+
+        .distribution .note {
+            margin-left: 20px;
+            font-size: 12px;
+            color: #989898;
+        }
+
+        .distribution .paytype span {
+            margin-left: 5px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /* 商品价格 */
+        .price {
+            margin-top: 10px;
+            background-color: white;
+            padding-top: 14px;
+            padding-bottom: 16px;
+        }
+
+        .price .zk {
+            color: #cf4444;
+        }
     </style>
-
-
 
 </head>
 
@@ -155,7 +298,7 @@
     <!-- 尺寸分为上下两个部分 -->
     <div class="header">
         <!-- 个人信息 -->
-        <div class="user">
+        <div class="user radius">
             <!-- 定位 -->
             <div class="position iconfont icon-location"></div>
             <!-- 个人信息 -->
@@ -171,15 +314,75 @@
             <div class="detials iconfont icon-more"></div>
 
         </div>
-        <!-- 商品 -->
-        <div class="goods"></div>
-        <!-- 配送 -->
-        <div class="distribution"></div>
-        <!-- 价格 -->
-        <div class="price"></div>
-
     </div>
 
+    <div class="center">
+
+        <!-- 商品 -->
+        <div class="goods radius">
+            <!-- 图片 -->
+            <div class="cover"></div>
+            <!-- 商品信息 -->
+            <div class="infos">
+                <p class="title">康尔贝 非接触式红外体温仪
+                    领券立减30元 婴儿级材质 测温…</p>
+
+                <span class="lab">
+                    <span>粉色</span>
+                    &nbsp;&nbsp;
+                    <span> 红外体温计</span>
+                </span>
+
+                <span class="price">
+                    <span class="price_real">¥
+                        <span class="price_real_value">266</span>
+                    </span>
+
+                    <span class="price_original">
+                        ¥<span class="price_original_value">299</span>
+                    </span>
+                </span>
+
+            </div>
+            <!-- 数量 -->
+            <p class="number iconfont icon-x">1</p>
+        </div>
+
+        <!-- 配送 -->
+        <div class="distribution radius">
+            <div class="itemfont">
+                <span>配送方式 </span>
+                <span>顺丰快递</span>
+            </div>
+            <div class="itemfont">
+                <span>买家备注 </span>
+                <span class="note">希望可以尽快发货，谢谢~</span>
+            </div>
+            <div class="itemfont">
+                <span>支付方式 </span>
+                <div class="paytype">
+                    <span>支付宝</span>
+                    <span class="iconfont icon-more"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 价格 -->
+        <div class="price radius">
+            <div class="itemfont">
+                <span>商品总价 </span>
+                <span>￥299.00</span>
+            </div>
+            <div class="itemfont">
+                <span>运费 </span>
+                <span>￥0.00 </span>
+            </div>
+            <div class="itemfont">
+                <span>折扣 </span>
+                <span class="zk">-￥30.00</span>
+            </div>
+        </div>
+    </div>
 
     <!-- 底部布局 -->
     <div class="footer">
