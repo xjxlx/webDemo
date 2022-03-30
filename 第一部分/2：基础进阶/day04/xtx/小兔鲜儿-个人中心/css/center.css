@@ -20,7 +20,6 @@
 .xtx_body .main {
     flex: 1;
     min-height: 500px;
-    background-color: #ffffff;
 }
 
 /* 头像 */
@@ -126,4 +125,61 @@
 /* 文字小圆点的悬停效果 */
 .aside .account .list_item:hover a::before {
     visibility: visible;
+}
+
+/* 设置中心 */
+.main .setting {
+    width: 100%;
+    height: 132px;
+    background-color: #fff;
+    display: flex;
+    padding: 20px 0;
+}
+
+.main .setting .left {
+    flex: 1;
+    height: 100%;
+    /* 对齐每一个item */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    align-items: center;
+    border-right: 1px solid #f4f4f4;
+}
+
+
+
+.main .setting .bottom {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #333333;
+}
+
+.main .setting .left img {
+    width: 25px;
+}
+
+.main .setting a {
+    /* 对齐a中的内容 */
+    display: flex;
+    /* 改变flex的轴向为竖向 */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.setting .left a:last-child img {
+    width: 18px;
+}
+
+.setting .right {
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.setting p {
+    font-size: 25px;
+    color: #e05e30;
 }
