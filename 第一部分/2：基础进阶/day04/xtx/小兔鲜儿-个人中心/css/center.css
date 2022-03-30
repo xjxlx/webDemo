@@ -185,27 +185,29 @@
 }
 
 
-/* 订单 */
-.main .order {
+/* 订单  公共的body样式*/
+.item_body {
     width: 100%;
     margin-top: 18px;
     background-color: #fff;
 }
 
-.main .order .title {
+/* 公共的title */
+.item_title {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
 
-.order .title .content {
+/* 公共的title */
+.item_title .content {
     font-size: 22px;
     color: #333333;
     margin-left: 25px;
     margin-top: 28px;
 }
 
-.order .title .all {
+.item_title .all {
     font-size: 16px;
     color: #999999;
     margin-top: 36px;
@@ -341,4 +343,54 @@
 .goodinfo span {
     font-size: 14px;
     color: #999999;
+}
+
+/* 收藏 */
+.line {
+    border-bottom: 1px solid #f4f4f4;
+    margin-left: 18px;
+    margin-right: 18px;
+    margin-top: 17px;
+}
+
+.collection_list {
+    margin-top: 23px;
+    margin-left: 18px;
+    margin-right: 18px;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.collection_list li {
+    width: 185px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+
+.collection_list img {
+    width: 160px;
+    background-size: contain;
+}
+
+.collection_list .bottom {
+    margin-top: 19px;
+    width: 183px;
+}
+
+.collection_list .bottom .title {
+    width: 183px;
+    font-size: 16px;
+    color: #333333;
+}
+
+.collection_list .bottom .price {
+    color: #9a2e1f;
+    font-size: 17px;
+}
+
+.collection_list .bottom .price .value {
+    font-size: 22px;
 }
