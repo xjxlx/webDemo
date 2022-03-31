@@ -1,0 +1,11 @@
+.box {
+  width: 100px;
+  height: 50px;
+}
+.box .child {
+  width: 20px;
+  height: 40px;
+}
+.box .child:hover {
+  width: 40px;
+}
