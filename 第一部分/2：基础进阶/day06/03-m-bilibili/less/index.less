@@ -1,0 +1,163 @@
+// 引入base路径
+@import 'base.less';
+
+// 视口的尺寸
+@vw :3.75vw;
+// 项目的主色调
+@color_main : rgb(251, 114, 153);
+@color_ccc : #ccc;
+
+header {
+    height: 84./@vw;
+    width: 100%;
+    background-color: white;
+
+    // 固定到顶部不动
+    position: fixed;
+    z-index: 1;
+
+    border-bottom: 1px solid #eee;
+
+    .top {
+        height: 44./@vw;
+        line-height: 44./@vw;
+
+        // 左右间距
+        padding-left: 18./@vw;
+        padding-right: 12./@vw;
+
+        display: flex;
+        justify-content: space-between;
+
+        .iconfont {
+            color: @color_main;
+            font-size: 28./@vw;
+        }
+
+
+        .right {
+            display: flex;
+            align-items: center;
+
+            .search {
+                font-size: 22./@vw;
+                color: @color_ccc;
+            }
+
+            .login {
+                margin-left: 24./@vw;
+                width: 24./@vw;
+                height: 24./@vw;
+            }
+
+            .download {
+                width: 72./@vw;
+                height: 24./@vw;
+                margin-left: 24./@vw;
+            }
+        }
+
+    }
+
+    .bottom {
+        display: flex;
+        justify-content: space-between;
+        height: 40./@vw;
+
+        .tab {
+            // background-color: rgb(196, 115, 115);
+
+            ul {
+                display: flex;
+                justify-content: space-between;
+                height: 40./@vw;
+                align-items: center;
+            }
+
+            a {
+                // background-color: rgb(206, 92, 92);
+                display: block;
+                height: 38./@vw;
+                line-height: 38./@vw;
+                margin-left: 16./@vw;
+                margin-right: 16./@vw;
+                font-size: 14./@vw;
+                color: #333;
+
+                &.on {
+                    color: @color_main;
+                    border-bottom: 1px solid @color_main;
+                    padding-bottom: 2./@vw;
+                }
+            }
+        }
+
+        .more {
+            width: 40./@vw;
+            height: 40./@vw;
+            font-size: 22./@vw;
+            text-align: center;
+            line-height: 40./@vw;
+        }
+    }
+}
+
+// 中间视频的布局
+.main {
+    // 距离顶部的距离
+    padding-top: 84./@vw;
+
+    ul {
+        justify-content: space-between;
+        display: flex;
+        // 不换行
+        flex-wrap: wrap;
+
+        // 左右设置间距 和 子标签对应，形成间隙 
+        margin: 0 5./@vw;
+    }
+
+    li {
+        display: block;
+        width: 50%;
+        padding: 5./@vw;
+    }
+
+
+    .top {
+        position: relative;
+
+        .button {
+            // 定位后，标签会脱标，所以需要设置宽高
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+
+            color: white;
+            padding: 8./@vw;
+
+            display: flex;
+            justify-content: space-between;
+
+            .iconfont {
+                font-size: 14./@vw;
+                vertical-align: middle;
+            }
+
+            span {
+                margin-left: 5./@vw;
+                font-size: 14./@vw;
+            }
+
+            .right {
+                margin-right: 8./@vw;
+            }
+        }
+    }
+
+    .txt {
+        margin-top: 5./@vw;
+        font-size: 12./@vw;
+        color: #333;
+    }
+}
