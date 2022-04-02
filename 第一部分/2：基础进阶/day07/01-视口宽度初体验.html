@@ -7,36 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <!-- 需求
+    Ø 默认网页背景色是灰色
+    Ø 屏幕宽度在768-992之间, 网页背景色是粉色
+    Ø 屏幕宽度在992-1200之间, 网页背景色是skyblue
+    Ø 屏幕宽度大于1200, 网页背景色是绿色 -->
+
     <style>
-        @media(min-width:1200px) {
-            body {
-                background-color: rgb(238, 23, 34);
-            }
-        }
-
-        @media(min-width:500px) {
-            body {
-                background-color: green;
-            }
+        body {
+            background-color: #ccc;
         }
 
 
-        @media(min-width:800px) {
+        @media (min-width:768px) {
             body {
-                background-color: rgb(210, 127, 32);
+                background-color: #000;
             }
         }
-
-        @media(min-width:1000px) {
-            body {
-                background-color: rgb(5, 27, 221);
-            }
-        }
-
 
         /* 检测视口的宽度，使用媒体查询的方式去处理 */
-        /* min-winth 最小的宽度：表示最小值这个数 */
-        /* max-width 最大的宽度：表示最大值是这个数 */
+        /* min-winth 最小的宽度：表示大于这个区间会这么显示 */
+        /* max-width 最大的宽度：表示在这个数值的区间会这么显示*/
     </style>
 
 </head>

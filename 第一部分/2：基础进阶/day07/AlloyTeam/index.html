@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图的响应式布局</title>
+
+    <!-- 第一步 -->
+    <!-- 先引入BootStrap的css，因为后续自己的样式需要修改，所有要使用层叠性，自己的放到最后面 -->
+    <link rel="stylesheet" href="../bootstrap-3.4.1-dist/css/bootstrap.min.css">
+    <!-- 再次引入自己的css样式 -->
+    <link rel="stylesheet" href="./css/index.css">
+
+    <style>
+        /* 第五步：修改代码的样式，具体的代码，交给less去实现 */
+    </style>
+
+</head>
+
+<body>
+
+    <!-- 第二步：直接粘贴轮播图的插件 -->
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+        </ol>
+
+        <!-- 第三部：修改内容 -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="./uploads/banner_1.jpg" alt="...">
+                <div class="carousel-caption">
+
+                </div>
+            </div>
+            <div class="item">
+                <img src="./uploads/banner_1.jpg" alt="...">
+                <div class="carousel-caption">
+
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="./uploads/banner_3.jpg" alt="...">
+                <div class="carousel-caption">
+
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="./uploads/banner_4.jpg" alt="...">
+                <div class="carousel-caption">
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- 第四部：引入JS -->
+    <!-- 引入jquery的js，这个要先引入，因为bootStrap的js也要使用这个库的内容 -->
+    <script src="./lib/js/jquery.js"></script>
+    <!-- 引入BootStrap的js -->
+    <script src="./lib/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

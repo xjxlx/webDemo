@@ -1,0 +1,35 @@
+// banner
+
+// 要求
+// 如果视口<768, 图250 max-width
+// 如果视口<992, 图400 max-width
+// 如果视口>992, 图500 min-width
+
+// 1:找到要修改的标签内容，此处使用父类的整体高度：carousel-inner
+
+// 2:提升标签的优先级
+
+.carousel-inner {
+    // .item {
+    //     height: 100% !important;
+    // }
+
+    @media (max-width:992px) {
+        .item {
+            height: 400px;
+        }
+    }
+
+    @media (max-width:768px) {
+        .item {
+            height: 250px;
+        }
+    }
+
+    @media (min-width:992px) {
+        .item {
+            height: 500px;
+        }
+    }
+
+}

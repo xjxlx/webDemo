@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>栅格化标签</title>
+
+    <link rel="stylesheet" href="./bootstrap-3.4.1-dist/css/bootstrap.min.css">
+
+    <style>
+        .box {
+            /* width: 100px; */
+            height: 200px;
+            margin-top: 10px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 引入版心类 ,默认带左右15px的间距 -->
+    <div class="box container">111</div>
+
+    <!-- 引入版心类，不带间距的处理 -->
+    <div class="box container">
+        <div class="row">
+            222
+        </div>
+    </div>
+
+    <!-- 引入版心类，不带左右间距，铺满全屏的效果 -->
+    <div class="box container-fluid">
+        333
+    </div>
+
+</body>
+
+</html>
