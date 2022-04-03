@@ -9,7 +9,8 @@
 
     <!-- 第一步 -->
     <!-- 先引入BootStrap的css，因为后续自己的样式需要修改，所有要使用层叠性，自己的放到最后面 -->
-    <link rel="stylesheet" href="../bootstrap-3.4.1-dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="../bootstrap-3.4.1-dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="./lib/bootstrap_custom/css/bootstrap.min.css">
     <!-- 再次引入自己的css样式 -->
     <link rel="stylesheet" href="./css/index.css">
 
@@ -20,6 +21,36 @@
 </head>
 
 <body>
+
+    <!-- 导航条 -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="./images/logo.png" alt=""></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">首页 </a></li>
+                    <li><a href="#">博客</a></li>
+                    <li><a href="#">Github</a></li>
+                    <li><a href="#">Tweb Conf</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <!-- 导航条 -->
+
 
     <!-- 第二步：直接粘贴轮播图的插件 -->
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -72,6 +103,20 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+
+    <!-- 加入响应式内容 -->
+    <div class="content container">
+        <div class="col-md-3 col-sm-6 col-xs-12"> <a href="#"></a></div>
+        <div class="col-md-3 col-sm-6 col-xs-12"> <a href="#"></a></div>
+        <div class="col-md-3 col-sm-6 col-xs-12"> <a href="#"></a></div>
+        <div class="col-md-3 col-sm-6 col-xs-12"> <a href="#"></a></div>
+    </div>
+
+    <!-- 加入响应式内容 -->
+
+
+
+
 
     <!-- 第四部：引入JS -->
     <!-- 引入jquery的js，这个要先引入，因为bootStrap的js也要使用这个库的内容 -->

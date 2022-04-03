@@ -1,18 +1,37 @@
-.carousel-inner .item {
-  height: 100% !important;
+.carousel-example-generic {
+  height: 100%;
 }
 @media (max-width: 992px) {
-  .carousel-inner .item {
+  .carousel-example-generic {
     height: 400px;
   }
 }
 @media (max-width: 768px) {
-  .carousel-inner .item {
+  .carousel-example-generic {
     height: 250px;
   }
 }
 @media (min-width: 992px) {
-  .carousel-inner .item {
+  .carousel-example-generic {
     height: 500px;
   }
+}
+.navbar-default {
+  background-color: transparent;
+  border: none;
+}
+.content {
+  background-color: green;
+  height: 100px;
+}
+.content div {
+  background-color: pink;
+  height: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.content div a {
+  display: block;
+  height: 100%;
+  background-color: yellow;
 }

@@ -1,36 +1,75 @@
 // banner
 
+// 1:找到要修改的标签内容，.carousel-inner>.item>img
+// 注意：
+//     1：此处有个特点，一般来说，使用less写的组件，标签都比较的深，在选择的时候，一定要注意到权重的问题。
+//     标签越深，则权重越高，后面如果想覆盖到前面的标签，则至少要和之前的标签保持同一个等级或者等级比之
+//     前的标签更高才行。
+//     2：如果想省事的话，可以使用!important 把标签的权重提升到最高
+//     3：如果要修改标签的话，注意看标签的颜色，如果是灰色的，则说明已经别其他标签给重叠掉了，选择
+//        那个黑色的标签才可以使用。
+
+// 2:尝试层叠掉标签的高度。
+// 3:修改标签的高度
+ 
+// .carousel-inner>.item>img{
+//     height: 100% ;
+// }
+
+
+
 // 要求
 // 如果视口<768, 图250 max-width
 // 如果视口<992, 图400 max-width
 // 如果视口>992, 图500 min-width
 
-// 1:找到要修改的标签内容，此处使用父类的整体高度：carousel-inner
 
-// 2:提升标签的优先级
-
-.carousel-inner {
-    .item {
-        height: 100% !important;
-    }
+.carousel-example-generic{
+    // 默认的高度
+    height: 100%;
 
     @media (max-width:992px) {
-
-        .item {
-            height: 400px;
-        }
+        height: 400px;
     }
 
     @media (max-width:768px) {
-        .item {
-            height: 250px;
-        }
+        height: 250px;
     }
 
+    
     @media (min-width:992px) {
-        .item {
-            height: 500px;
+        height: 500px;
+    }
+}
+
+
+// 头部
+
+// 1：改掉头部背景色
+
+ .navbar-default{
+    background-color:transparent;
+    border: none;
+ }
+
+ // 定制，改源码， 小于768 就开始折叠
+
+// 响应式内容
+.content{
+    background-color: green;
+    height: 100px;
+
+    div{
+        background-color: pink;
+        height: 100px;
+        padding-left: 10px;
+        padding-right: 10px;
+       
+
+        a{
+            display: block;
+            height: 100%;
+            background-color: yellow;
         }
     }
-
 }
