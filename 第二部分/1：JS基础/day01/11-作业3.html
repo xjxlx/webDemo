@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业3</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+
+        }
+
+        table {
+            margin: 100px auto;
+            border: 1px solid #000;
+            border-spacing: 0px;
+        }
+
+
+        th {
+            width: 100px;
+            height: 30px;
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
+        }
+
+        td {
+            width: 100px;
+            height: 30px;
+            border-right: 1px solid #000;
+            text-align: center;
+        }
+
+
+        th:last-child {
+            border-right: none;
+        }
+
+        td:last-child {
+            border-right: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 需求：用户输入商品价格和商品数量，以及收货地址，可以自动打印订单信息 -->
+    <table>
+        <!-- 标题 加粗 -->
+        <caption>
+            <strong>商品信息</strong>
+        </caption>
+
+        <tr>
+            <!-- 使用th代替td,作为标题使用，会自定变黑加粗 -->
+            <th>价格</th>
+            <th>数量</th>
+            <th>总价</th>
+            <th>地址</th>
+        </tr>
+        <tr>
+            <td>100元</td>
+            <td>10个</td>
+            <td>1000元</td>
+            <td>黑马程序员</td>
+        </tr>
+    </table>
+
+    <script>
+        let price = +prompt("请输入价格")
+        let number = +prompt("请输入数量")
+        let address = prompt("请输入地址")
+
+        document.write(`<!-- 需求：用户输入商品价格和商品数量，以及收货地址，可以自动打印订单信息 -->
+    <table>
+        <!-- 标题 加粗 -->
+        <caption>
+            <strong>商品信息</strong>
+        </caption>
+
+        <tr>
+            <!-- 使用th代替td,作为标题使用，会自定变黑加粗 -->
+            <th>价格</th>
+            <th>数量</th>
+            <th>总价</th>
+            <th>地址</th>
+        </tr>
+        <tr>
+            <td>${price}元</td>
+            <td>${number}个</td>
+            <td>${price*number}元</td>
+            <td>${address}</td>
+        </tr>
+    </table>`)
+    </script>
+
+
+</body>
+
+</html>
