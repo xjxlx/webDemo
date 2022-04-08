@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 需求：页面弹出对话框，‘你爱我吗’，如果输入‘爱’，则结束，否则一直弹出对话框
+
+        let content = prompt("请输入内容")
+        while (content) {
+            if (content === "爱") {
+                break
+            }
+            content = prompt("请再次输入内容")
+        }
+    </script>
+
+
+</body>
+
+</html>
