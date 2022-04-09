@@ -9,13 +9,54 @@
 </head>
 
 <body>
-
+    <br>
     <script>
         for (let index = 1; index < 4; index++) {
             document.writeln(`第${index}天<br>`)
             for (let i = 1; i < 6; i++) {
                 document.writeln(`记住第${i}个单词<br>`)
             }
+        }
+        document.write("<br>")
+
+        // 打印5行5列的星星
+        for (let index = 0; index < 5; index++) {
+            // 五行
+            document.write("☆")
+            for (let j = 0; j < 5; j++) {
+                document.write("☆")
+            }
+            document.write("<br>")
+        }
+
+        document.write("<br>")
+
+        // 打印倒三角形星星
+        //         需求：如图所示
+        // 分析：
+        // ①：利用双重for循环来做
+        // ②：外层循环控制打印行，内层循环控制每行打印几个（列）
+        // ③：内层循环的个数跟第几行是一一对应的
+
+        for (let i = 0; i < 5; i++) {
+            document.write("☆")
+            for (let j = 0; j < i; j++) {
+                document.write("☆")
+            }
+            document.write("<br>")
+        }
+
+        document.write("<br>")
+
+        // 九九乘法表
+        // 需要从1开始，到9结束，所以是i=1 ，i<10
+        for (let i = 1; i < 10; i++) {
+            // 因为要从1开始计算，所以<得数 = 必须有1，所以要加1
+            for (let j = 1; j < i + 1; j++) {
+                document.writeln(`${j}x${i} = ${i*j}`)
+            }
+            
+            document.writeln("<br>")
         }
     </script>
 </body>
