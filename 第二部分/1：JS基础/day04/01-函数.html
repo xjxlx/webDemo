@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function fun() {
+            document.write("干你妹的！" + '<br>')
+        }
+
+        // 封装一个函数，计算两个数的和
+        function qh() {
+            let num1 = 10
+            let num2 = 20
+            document.write(num1 + num2 + '<br>')
+        }
+
+        qh()
+
+        // 封装一个函数，计算1-100之间所有数的和
+        function qhall() {
+            let num = 0
+            for (let index = 0; index <= 100; index++) {
+                num += index
+            }
+            document.write("number:" + num + '<br>')
+        }
+        qhall()
+
+        // 函数传参
+        function qh2(num, num2) {
+            document.write("--->" + (num + num2) + '<br>')
+        }
+        qh2(2, 5)
+    </script>
+</body>
+
+</html>

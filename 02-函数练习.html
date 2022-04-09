@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 需求：采取函数封装的形式：输入2个数，计算两者的和，打印到页面中
+
+        function qh(num, num2) {
+            // 合理利用逻辑中断 形参如果不被赋值， 就是undefined
+            num = num || 0
+            num2 = num2 || 0
+
+            document.write(num2 + num + '<br>')
+        }
+
+
+        qh(1, undefined)
+    </script>
+
+
+</body>
+
+</html>
