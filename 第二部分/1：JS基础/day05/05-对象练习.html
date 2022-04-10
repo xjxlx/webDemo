@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption><strong> 学生列表</strong></caption>
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>家乡</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+        let students = [{
+                name: '小明',
+                age: 18,
+                gender: '男',
+                hometown: '河北省'
+            },
+            {
+                name: '小红',
+                age: 19,
+                gender: '女',
+                hometown: '河南省'
+            },
+            {
+                name: '小刚',
+                age: 17,
+                gender: '男',
+                hometown: '山西省'
+            },
+            {
+                name: '小丽',
+                age: 18,
+                gender: '女',
+                hometown: '山东省'
+            }
+        ]
+
+        // 打印头部
+        document.write(`
+        <table>
+        <caption><strong> 学生列表</strong></caption>
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>家乡</th>
+        </tr>`)
+
+        // 需求：请把下面数据中的对象打印出来：
+        for (const key in students) {
+            // 获取每一个变量
+            let value = students[key];
+
+            for (const k in value) {
+                const element = value[k];
+                document.write(k + " : " + element + '<br>')
+
+                // 打印姓名
+                document.write(`
+                <tr>
+                <td>${ key}</td>
+                <td>${ value.name}</td>
+                <td>${ value.age}</td>
+                <td>${ value.gender}</td>
+                <td>${ value.hometown}</td>
+        </tr>`)
+            }
+        }
+
+        // 打印尾部
+        document.write(" </table>")
+    </script>
+
+</body>
+
+</html>

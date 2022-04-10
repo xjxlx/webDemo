@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 传入默认的数据值
+        function fd(x = 10, y = 10) {
+            document.write(x + y + '<br>')
+        }
+
+        // 如果传递的有具体的值，则使用具体的值
+        // 如果没有具体的值，则会使用默认的值
+        fd()
+        fd(1, 2)
+        fd(1)
+    </script>
+</body>
+
+</html>
