@@ -16,6 +16,7 @@
 		// 找到组件
 		let imgv = document.querySelector(".imm")
 		let num = 1;
+		document.write("111")
 		// 倒计时
 		letinv = setInterval(() => {
 			if (num < 9) {
@@ -24,8 +25,10 @@
 				num = 1
 			}
 			imgv.src = `./images/b0${num}.jpg`
-			// imgv.style.backgroundImage = `url("./images/b0${num}.jpg")`
+			document.write("num:" + num)
 		}, 1000);
+
+		document.write("222")
 	</script>
 </body>
 

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>文件全选</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+			border: 1px solid #c0c0c0;
+			width: 500px;
+			margin: 100px auto;
+			text-align: center;
+		}
+
+		th {
+			background-color: #09c;
+			font: bold 16px "微软雅黑";
+			color: #fff;
+			height: 24px;
+		}
+
+		td {
+			border: 1px solid #d0d0d0;
+			color: #404060;
+			padding: 10px;
+		}
+
+		.allCheck {
+			width: 80px;
+		}
+	</style>
+</head>
+
+<body>
+	<table>
+		<tr>
+			<th class="allCheck">
+				<input type="checkbox" name="" id="checkAll"> <span class="all">全选</span>
+			</th>
+			<th>商品</th>
+			<th>商家</th>
+			<th>价格</th>
+		</tr>
+		<tr>
+			<td>
+				<input type="checkbox" name="check" class="ck">
+			</td>
+			<td>小米手机</td>
+			<td>小米</td>
+			<td>￥1999</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="checkbox" name="check" class="ck">
+			</td>
+			<td>小米净水器</td>
+			<td>小米</td>
+			<td>￥4999</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="checkbox" name="check" class="ck">
+			</td>
+			<td>小米电视</td>
+			<td>小米</td>
+			<td>￥5999</td>
+		</tr>
+	</table>
+
+	<script>
+		// 全选文本框案例1
+		// 需求：用户点击全选，则下面复选框全部选择，取消全选则全部取消,文字对应变化
+		// 案例
+		// 分析：
+		// ①：全选复选框点击，可以得到当前按钮的 checked
+		// ②：把下面所有的小复选框状态checked，改为和全选复选框一致
+		// ③：如果当前处于选中状态，则把文字改为取消， 否则反之
+		let sele = document.querySelector("#checkAll")
+		let ckall = document.querySelectorAll(".ck")
+
+		// 添加事件
+		sele.addEventListener("click", function() {
+			// 所有的选中状态
+			let che = sele.checked
+
+			// 遍历每一个选项，设置状态
+			for (let i = 0; i < ckall.length; i++) {
+				let element = ckall[i];
+				// 设置选中的状态
+				element.checked = che
+			}
+		})
+
+		// 逆向遍历每一个子选项，根据所有的子选项状态，控制总的选中状态
+		for (let i = 0; i < ckall.length; i++) {
+			let element = ckall[i];
+			// 给每一个添加点击事件
+			element.addEventListener("click", function() {
+				for (let j = 0; j < ckall.length; j++) {
+					const element = ckall[j];
+					// 如果其中有一个的状态为false ,则总的为false,否则总的为true
+					if (element.checked == false) {
+						sele.checked = false
+						return
+					}
+					sele.checked = true
+				}
+			})
+		}
+	</script>
+</body>
+
+</html>
