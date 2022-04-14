@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>className样式</title>
+	<style>
+		/* style的修改方式简单的还合适，如果数据多了，就比较的麻烦 */
+		/* 属性修改的多了，可以使用className去控制 */
+		.box {
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+		}
+
+		.box1 {
+			margin-top: 100px;
+			margin-left: 200px;
+
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="box"> </div>
+
+	<script>
+		let box = document.querySelector("div")
+		// 追加一个新的类名
+		box.classList.add("box1")
+		// 移除一个类名
+		box.classList.remove("box")
+		// 切换一个类名，有就删除，没有就加上
+		box.classList.toggle("box")
+	</script>
+</body>
+
+</html>

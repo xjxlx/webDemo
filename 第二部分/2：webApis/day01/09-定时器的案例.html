@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<button disabled>确定</button>
+	<span>60s</span>
+	<script>
+		// 倒计时效果
+		// 需求：按钮60秒之后才可以使用
+		// 1:拿到按钮和文字的对象
+
+		let btn = document.querySelector("button")
+		let spans = document.querySelector("span")
+
+		let djs = 10
+		let num = setInterval(function() {
+			// document.write("djs:"+(--djs))
+			spans.innerText = (--djs) + "s"
+			if (djs <= 0) {
+				// 停止倒计时
+				clearInterval(num)
+
+				// 按钮可以点击
+				btn.disabled = false
+			}
+		}, 1000)
+	</script>
+</body>
+
+</html>

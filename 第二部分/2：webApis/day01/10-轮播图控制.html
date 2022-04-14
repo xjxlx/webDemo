@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>轮播图控制</title>
+
+</head>
+
+<body>
+	<img class="imm"></img>
+
+	<script>
+		// 找到组件
+		let imgv = document.querySelector(".imm")
+		let num = 1;
+		// 倒计时
+		letinv = setInterval(() => {
+			if (num < 9) {
+				++num
+			} else if (num == 9) {
+				num = 1
+			}
+			imgv.src = `./images/b0${num}.jpg`
+			// imgv.style.backgroundImage = `url("./images/b0${num}.jpg")`
+		}, 1000);
+	</script>
+</body>
+
+</html>

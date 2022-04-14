@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<style>
+		body {
+			/* background-repeat: no-repeat; */
+		}
+	</style>
+</head>
+
+<body>
+	<!-- // 页面刷新，页面随机更换背景图片 -->
+	<script>
+		function getRandom(min, max) {
+			return Math.floor(Math.random() * (max - min + 1)) + min
+		}
+		// 获取对象
+		// let divs = document.querySelector("div")
+		// 获取随机数
+		let ran = getRandom(1, 9)
+		document.write("ran:" + ran)
+		// 修改样式
+		document.body.style.backgroundImage = `url(./images/b0${ran}.jpg)`
+		document.body.style.backgroundRepeat = "no-repeat"
+		document.body.style.width = "100%"
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		div {
+			width: 150px;
+			height: 150px;
+			background-color: pink;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		我是一个盒子
+	</div>
+
+	<script>
+		let divs = document.querySelector("div")
+		// 单纯的修改文字的显示内容，不识别标签内容
+		divs.innerText = "<strong>哈哈哈</strong>"
+		// 可以识别标签内容的修改方式
+		divs.innerHTML = "<strong>哈哈哈</strong>"
+	</script>
+
+</body>
+
+</html>

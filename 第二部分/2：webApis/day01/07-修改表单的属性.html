@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<input class="inp" value="111" type="text">
+	<button class="btn" disabled>按钮</button>
+	<input type="checkbox" id="aaa">
+
+	<script>
+		// 修改输入框的内容
+		let inp = document.querySelector(".inp")
+		inp.value = "333"
+		inp.type = "password"
+		// 修改按钮的可选状态
+		let btn = document.querySelector(".btn")
+		btn.disabled = false
+		// 修改选中的状态
+		let aaa = document.querySelector("#aaa")
+		aaa.checked = false
+	</script>
+</body>
+
+</html>
