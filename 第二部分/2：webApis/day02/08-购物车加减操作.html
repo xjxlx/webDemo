@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=\, initial-scale=1.0">
+	<title>购物车加减操作</title>
+	<style>
+		.box {
+			margin: 100px auto;
+			display: flex;
+			width: 100px;
+			justify-content: space-between;
+			border: 1px solid #000;
+		}
+
+		#total {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			text-align: center;
+			line-height: 50px;
+			border: none;
+			border-right: 1px solid #000;
+		}
+
+		.aaa {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-between;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="box">
+		<input type="text" value="1" id="total" readonly>
+
+		<div class="aaa">
+			<input type="button" value="+" id="add">
+			<input type="button" value="-" id="reduce" disabled>
+		</div>
+	</div>
+
+	<script>
+		// 需求： 用户点击加号， 则文本框 + 1， 点击减号， 则文本框 - 1， 如果文本框为1， 则禁用减号
+		// 案例
+
+		// 分析：
+		// ①： 给添加按钮注册点击事件, 获取表单的value, 然后自增
+		// ②： 解除减号的disabled状态
+		// ③： 给减号按钮添加点击事件, 获取表单的value, 然后自减
+		// ④： 自减结束需要判断, 如果结果小于等于1 则添加上disabled状态
+
+		// 查找对象
+		let add = document.querySelector("#add")
+		let reduce = document.querySelector("#reduce")
+		let total = document.querySelector("#total")
+
+		add.addEventListener("click", function() {
+
+			let values = total.value
+			total.value = ++values
+
+			if (values > 1) {
+				reduce.disabled = false
+			}
+		})
+
+		reduce.addEventListener("click", function() {
+			let values = total.value
+			if (values <= 1) {
+				reduce.disabled = true
+			} else {
+				reduce.disabled = false
+				total.value = --values
+			}
+		})
+	</script>
+</body>
+
+</html>

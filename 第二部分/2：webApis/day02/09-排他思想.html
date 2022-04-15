@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>排他思想</title>
+
+	<style>
+		.active {
+			background-color: blue;
+		}
+	</style>
+</head>
+
+<body>
+	<button class="active">第1个</button>
+	<button>第2个</button>
+	<button>第3个</button>
+	<button>第4个</button>
+	<button>第5个</button>
+	<button>第6个</button>
+
+	<script>
+		// 使用：
+		// 1. 干掉所有人
+		// 使用for循环
+		// 2. 复活他自己
+		// 通过this或者下标找到自己或者对应的元素
+		let btn = document.querySelectorAll("button")
+
+		for (let i = 0; i < btn.length; i++) {
+			const element = btn[i];
+
+			// 点击事件
+			element.addEventListener("click", function() {
+				// 遍历,清除所有
+				// let all = document.querySelectorAll(".active")
+				// for (let j = 0; j < all.length; j++) {
+				// 	const element = all[j];
+				// 	element.classList.remove("active")
+				// }
+
+				// 只查询一个选中的标签，因为之前只有一个被选中了
+				let btns = document.querySelector(".active")
+				// 删除这个标签
+				btns.classList.remove("active")
+				// 点击的那个标签去添加方法名
+				this.classList.add("active")
+			})
+		}
+	</script>
+</body>
+
+</html>
