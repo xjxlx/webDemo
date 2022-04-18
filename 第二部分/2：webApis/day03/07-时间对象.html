@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>时间</title>
+</head>
+
+<body>
+	<span class="time"></span>
+
+	<script>
+		let time = document.querySelector(".time")
+
+		function parseDate(date) {
+			console.log(date)
+			// 获得年份 获取四位年份
+			let year = date.getFullYear()
+			// 获得月份 取值为 0 ~ 11
+			let month = date.getMonth()
+			// 获取月份中的每一天 不同月份取值也不相同
+			let day = date.getDate()
+			// 获取星期 取值为 0 ~ 6
+			let xq = date.getDay()
+			// 获取小时 取值为 0 ~ 23
+			let hours = date.getHours()
+			// 获取分钟 取值为 0 ~ 59
+			let minutes = date.getMinutes()
+			// 获取秒 取值为 0 ~ 59
+			let second = date.getSeconds()
+
+			console.log(
+				"year:" + year +
+				"  month:" + month +
+				"  day:" + day +
+				"  xq:" + xq +
+				"  hours:" + hours +
+				"  minutes:" + minutes +
+				"  second:" + second)
+
+			time.innerText = year + "年" + (month + 1) + "月" + day + "日" + hours + ":" + minutes + ":" + second
+		}
+
+		// 获取当前的时间
+		// setInterval(function() {
+		// 	parseDate(new Date())
+		// }, 1000);
+
+		// setInterval(sss, 1000);
+
+		// function sss() {
+		// 	parseDate(new Date())
+		// }
+
+		parseDate(new Date("2022-08-18"))
+	</script>
+</body>
+
+</html>

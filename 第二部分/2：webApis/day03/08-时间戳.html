@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<span class="by_time"></span>
+	<script>
+		// 1:获取时间的毫秒数
+		let date = new Date()
+		console.log(date.getTime())
+		// 2:获取时间的毫秒数
+		console.log(+new Date())
+		// 3:获取时间的毫秒数
+		console.log(Date.now())
+
+		// 毕业倒计时
+		let by = "2022-04-18 00:00:00"
+		let bytim = document.querySelector(".by_time")
+
+		setInterval(() => {
+			// 毕业的指定时间戳
+			let byDate = +new Date(by)
+			// 当前的时间戳
+			let currDate = +new Date()
+			// 计算相差的时间
+			let intver = byDate - currDate
+
+			// 计算时间（天、小时、分钟、秒）
+			let day = parseInt(intver / 1000 / 60 / 60 / 24)
+			let hours = parseInt(intver / 1000 / 60 / 60 % 24)
+			let minutes = parseInt(intver / 1000 / 60 % 60)
+			let second = parseInt(intver / 1000 % 60)
+
+			bytim.innerHTML = day + "天" + hours + "小时" + minutes + "分钟" + second + "秒"
+		}, 1000);
+	</script>
+</body>
+
+</html>

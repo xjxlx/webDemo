@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>查找子节点</title>
+</head>
+
+<body>
+
+	<button>我是按钮</button>
+	<ul>
+		<!-- 这些是内容 -->
+		<li>我是孩子1</li>
+		<li>我是孩子2</li>
+		<li>我是孩子3</li>
+		<li>我是孩子4</li>
+		<li>我是孩子5</li>
+	</ul>
+
+	<script>
+		let btn = document.querySelector("button")
+		let ulv = document.querySelector("ul")
+		btn.addEventListener("click", function() {
+			let nods = ulv.childNodes
+			console.log(nods)
+		})
+	</script>
+</body>
+
+</html>

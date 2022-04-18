@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>克隆和删除节点</title>
+</head>
+
+<body>
+	<input type="button" name="" id="" value="删除">
+	<input type="button" name="" id="kl" value="克隆">
+	<ul class="aul">
+		<li>我是第1个元素</li>
+		<li>我是第2个元素</li>
+		<li>我是第3个元素</li>
+		<li>我是第4个元素</li>
+		<li>我是第5个元素</li>
+		<li>我是第6个元素</li>
+	</ul>
+
+	<script>
+		let btn = document.querySelector("input")
+		let ul = document.querySelector("ul")
+
+		btn.addEventListener("click", function() {
+			// 删除第一个元素
+			ul.removeChild(ul.children[0])
+		})
+
+		// 克隆
+		let kl = document.querySelector("#kl")
+		kl.addEventListener("click", function() {
+			// 元素对象.cloneNode(true) ：克隆对象以及他的子标签
+			// 元素对象.cloneNode(false) ：只克隆对象，不克隆他的子标签
+			// 元素对象.cloneNode() ：等同于 = 元素对象.cloneNode(false)       
+			let kls = ul.cloneNode()
+			console.log(kls)
+		})
+	</script>
+</body>
+
+</html>

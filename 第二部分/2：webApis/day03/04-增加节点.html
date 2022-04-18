@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>增加节点</title>
+</head>
+
+
+<body>
+	<input type="button" value="按钮">
+	<ul>
+		<li>我是1</li>
+		<li>我是2</li>
+		<li>我是3</li>
+	</ul>
+
+	<script>
+		let input = document.querySelector("input")
+		let ul = document.querySelector("ul")
+
+		input.addEventListener("click", function() {
+			// 创造节点
+			let newLi = document.createElement("li")
+			newLi.innerHTML = "我是新建的li"
+			// 追加节点,在父类的最下面
+			ul.appendChild(newLi)
+
+			// 创建节点2
+			let firstli = document.createElement("li")
+			firstli.innerHTML = "我是新建的最上面的节点！"
+			// 把节点插入到ul的最上面
+			ul.insertBefore(firstli, ul.children[0])
+
+			console.log(newLi)
+		})
+	</script>
+</body>
+
+</html>
