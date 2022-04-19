@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		img {
+			/* border: 1px solid #000; */
+		}
+	</style>
+</head>
+
+<body>
+	<img src="./images/tianshi.gif" alt="">
+
+	<script>
+		let img = document.querySelector("img")
+		document.addEventListener("mousemove", function(e) {
+			let x = e.clientX
+			let y = e.clientY
+
+			console.log("www:" + img.width)
+			console.log("hhh:" + img.height)
+
+			// 注意：如果可以直接获取属性的话，就不要使用style去获取属性
+			img.style.marginLeft = (x - (img.width / 2)) + "px"
+			img.style.marginTop = (y - (img.height / 2)) + "px"
+		})
+	</script>
+</body>
+
+</html>

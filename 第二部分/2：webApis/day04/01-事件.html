@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body {
+			height: 3000px;
+		}
+
+		input {
+			display: block;
+			margin: 100px auto;
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+</head>
+
+<body>
+	<input type="button" value="哈哈">
+
+	<script>
+		// let btn = document.querySelector("input")
+		// btn.addEventListener("click", function(event) {
+
+		// 	console.log("btn-clientX:" + event.clientX + " clientY:" + event.clientY)
+		// 	console.log("btn-pageX:" + event.pageX + " pageY:" + event.pageY)
+		// 	console.log("btn-offsetX:" + event.offsetX + " offsetY:" + event.offsetY)
+		// })
+
+		let a  = 1
+		let ab = 2
+		document.addEventListener("click", function(event) {
+
+			console.log("clientX:" + event.clientX + " clientY:" + event.clientY)
+			console.log("pageX:" + event.pageX + " pageY:" + event.pageY)
+			console.log("offsetX:" + event.offsetX + " offsetY:" + event.offsetY)
+		})
+	</script>
+</body>
+
+</html>
