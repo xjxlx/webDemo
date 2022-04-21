@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/user.css">
+</head>
+
+<body>
+	<h1>新增学员</h1>
+	<div class="info">
+		姓名：<input type="text" class="uname">
+		年龄：<input type="text" class="age">
+		性别: <select name="gender" id="" class="gender">
+			<option value="男">男</option>
+			<option value="女">女</option>
+		</select>
+		学号：<input type="text" class="stuId">
+		薪资：<input type="text" class="salary">
+		就业城市：<select name="city" id="" class="city">
+			<option value="北京">北京</option>
+			<option value="上海">上海</option>
+			<option value="广州">广州</option>
+			<option value="深圳">深圳</option>
+			<option value="曹县">曹县</option>
+
+		</select>
+		<button class="add">录入</button>
+	</div>
+
+	<h1>就业榜</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>学号</th>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>性别</th>
+				<th>薪资</th>
+				<th>就业城市</th>
+				<th>操作</th>
+			</tr>
+
+		</thead>
+
+		<tbody>
+			<!-- <tr>
+				<td>1001</td>
+				<td>欧阳霸天</td>
+				<td>19</td>
+				<td>男</td>
+
+				<td>15000</td>
+				<td>上海</td>
+				<td>
+					<a href="javascript:">删除</a>
+				</td>
+			</tr> -->
+
+		</tbody>
+	</table>
+	<script>
+		//  1. 准备好数据后端的数据
+		let arr = [{
+				stuId: 1001,
+				uname: '欧阳霸天',
+				age: 19,
+				gender: '男',
+				salary: '20000',
+				city: '上海'
+			},
+			{
+				stuId: 1002,
+				uname: '令狐霸天',
+				age: 29,
+				gender: '男',
+				salary: '30000',
+				city: '北京'
+			},
+			{
+				stuId: 1003,
+				uname: '诸葛霸天',
+				age: 39,
+				gender: '男',
+				salary: '2000',
+				city: '北京'
+			},
+		]
+
+		// 1：添加已有的数据，为了后续的统一使用，构建方法
+
+		// 父类对象
+		let tbody = document.querySelector("tbody")
+		// 手动添加数据
+		let add = document.querySelector(".add")
+
+		let uname = document.querySelector(".uname") // 姓名
+		let age = document.querySelector(".age") // 年龄
+		let gender = document.querySelector(".gender") // 性别
+		let stuId = document.querySelector(".stuId") // 学号
+		let salary = document.querySelector(".salary") //  薪资
+		let city = document.querySelector(".city") // 城市
+
+		function addData() {
+			// 先清空数据，在添加新的数据，避免数据的重复显示,此处不用操作数组，避免数据异常
+			tbody.innerHTML = ""
+			uname.innerHTML = ""
+			age.innerHTML = ""
+			salary.innerHTML = ""
+
+			for (let i = 0; i < arr.length; i++) {
+				const element = arr[i];
+
+				// 创建对象
+				let tr = document.createElement("tr")
+				// 写入数据
+				tr.innerHTML = `<tr>
+				<td>${element.stuId}</td> 
+				<td>${element.uname}</td>
+				<td>${element.age}</td>
+				<td>${element.gender}</td>
+
+				<td>${element.salary}</td>
+				<td>${element.city}</td>
+				<td>
+					<a href="javascript:" id="${i}">删除</a>
+				</td
+			</tr>`
+
+				// 把创建的元素添加到父类的tbody中
+				tbody.appendChild(tr)
+			}
+		}
+
+		// 添加默认的数据
+		addData()
+
+		add.addEventListener("click", function() {
+			// 操作数组，添加数据，这里添加的不是一个单类型的数据，是一个数组
+			arr.push({
+				stuId: arr[arr.length - 1].stuId + 1,
+				uname: uname.value,
+				age: age.value,
+				gender: gender.value,
+				salary: salary.value,
+				city: city.value
+			})
+
+			// 重新渲染数据
+			addData()
+		})
+
+		// 删除操作
+		tbody.addEventListener("click", function(event) {
+			// 通过target.tagName.去获取点击的对象
+			if (event.target.tagName === "A") {
+
+				// 此处需要知道当前对象的index,此处可以通过取巧的办法，在轮询写入集合数据的时候，可以把属性的值，例如：id的值给设置成集合遍历的index
+				// 在这里再次获取之前设定的那个属性值，达到控制集合的目的
+				let index = event.target.id
+				console.log("index: " + index)
+				// 删除集合中指定的数据对象
+				arr.splice(index, 1)
+				// 刷新渲染数据
+				addData()
+			}
+		})
+	</script>
+</body>
+
+</html>
