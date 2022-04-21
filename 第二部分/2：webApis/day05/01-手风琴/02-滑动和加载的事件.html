@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<style>
+		body {
+			height: 4000px;
+		}
+
+		div {
+			width: 200px;
+			height: 100px;
+			overflow: auto;
+			background: pink;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div>
+		我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据
+		我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据
+		我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据
+		我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据
+		我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据
+		我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据
+		我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据
+		我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据
+	</div>
+
+	<img src="./images/1.jpg" alt="">
+	<script>
+		// 整个页面滑动的监听
+		window.addEventListener("scroll", function() {
+			console.log("页面的滑动");
+		})
+
+		// 给单个元素设置滑动的监听
+		document.querySelector("div")
+			.addEventListener("scroll", function() {
+				console.log("标签的滑动")
+			})
+
+		// 加载事件 
+
+		// 所有数据都加载完成了，包括html,css，以及外链的图片等资源
+		window.addEventListener("load", function() {
+			console.log("页面的数据都加载完毕了")
+		})
+
+		// 只解析html，不解析其他数据
+		document.addEventListener("DOMContentLoaded", function() {
+			console.log("html 解析完成了！")
+		})
+
+		// 该方法不会被执行
+		document.querySelector("div")
+			.addEventListener("load", function() {
+				console.log("div数据加载完毕了")
+			})
+
+		// 图片的资源加载完成了
+		document.querySelector("img")
+			.addEventListener("load", function() {
+				console.log("图片加载成功了！")
+			})
+	</script>
+
+
+</body>
+
+</html>
