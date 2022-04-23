@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>scroll家族</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		div {
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+			overflow: auto;
+			padding: 40px;
+			border: 20px solid #000;
+			margin-left: 200px;
+		}
+
+		html {
+			width: 3000px;
+			height: 3000px;
+		}
+
+		button {
+			width: 100px;
+			height: 100px;
+			margin: 100px;
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="div">
+		我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据
+		我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据
+		我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据
+		我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据
+		我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据
+		我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据我是测试数据
+	</div>
+	<button>返回按钮</button>
+
+	<script>
+		let div = document.querySelector("div")
+		div.addEventListener("scroll", function() {
+			// 获取内容的宽高
+			console.log("scrollWidth:" + div.scrollWidth)
+			console.log("scrollHeight:" + div.scrollHeight)
+
+			// 获取元素滑动的高度和左侧的间距
+			console.log("scrollTop:" + div.scrollTop)
+			console.log("scrollLeft:" + div.scrollLeft)
+
+			console.log("------------Scroll家族--------------")
+			// 获取元素的宽度（包含padding 、border等属性）
+			console.log("offsetWidth:" + div.offsetWidth)
+			console.log("offsetHeight:" + div.offsetHeight)
+
+			// 获取元素距离父类元素的左上的距离
+			// 这两个属性是只读的属性，只能获取不能设置
+			console.log("offsetTop:" + div.offsetTop)
+			console.log("offsetLeft:" + div.offsetLeft)
+
+			console.log("------------Client家族--------------")
+			console.log("clientWidth:" + div.clientWidth)
+			console.log("clientHeight:" + div.clientHeight)
+
+			console.log("--------------重新开始-------------")
+		})
+
+		let button = document.querySelector("button")
+		button.addEventListener("click", function() {
+			// 滑动到最顶部
+			document.documentElement.scrollTop = 0
+		})
+
+		// 三：页面滚动的间距
+		window.addEventListener("scroll", function() {
+			// 获取整个页面的html对象
+			let html = document.documentElement
+			console.log("滑动的top:" + html.scrollTop)
+			console.log("滑动的Left:" + html.scrollLeft)
+			if (html.scrollTop >= 150) {
+				button.style.display = "block"
+			} else {
+				button.style.display = "none"
+			}
+		})
+
+		// 窗口改变的时候去触发事件
+		window.addEventListener("resize", function() {
+			// 获取可见屏幕的宽度
+			let clientWidth = document.documentElement.clientWidth
+			//  获取可见屏幕的高度
+			let clientHeight = document.documentElement.clientHeight
+
+			console.log("clientWidth:" + clientWidth)
+			console.log("clientHeight:" + clientHeight)
+		})
+	</script>
+</body>
+
+</html>
