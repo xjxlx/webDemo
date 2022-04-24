@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width= , initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<a href="#">支付成功 5秒之后跳转会原网页</a>
+	<button>跳转原网页</button>
+	<script>
+		// 5秒钟之后跳转的页面
+		// 需求：用户点击可以跳转，如果不点击，则5秒之后自动跳转，要求里面有秒数倒计时
+		// 分析：
+		// ①：目标元素是链接
+		// ②：利用定时器设置数字倒计时
+		// ③：时间到了，自动跳转到新的页面
+
+		let button = document.querySelector("button")
+		let a = document.querySelector("a")
+
+		// location 对象
+		console.log(location.href)
+
+        // 设置网络地址
+		button.addEventListener("click", function() {
+			location.href = "https://www.baidu.com"
+		})
+
+		let num = 0;
+		let interval = setInterval(function() {
+			num += 1000
+			if (num >= 5000) {
+				clearInterval(interval);
+				// 设置网络地址
+				location.href = "https://www.baidu.com"
+			}
+			a.innerHTML = `支付成功 ${5- num/1000}秒之后跳转会原网页`
+
+		}, 1000)
+	</script>
+</body>
+
+</html>

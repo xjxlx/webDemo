@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<button class="open">开启定时函数</button>
+	<button class="close">关闭定时函数</button>
+	<script>
+		// 定时函数
+		let timeout = 0
+		document.querySelector(".open").addEventListener("click", function() {
+			let timeout = setTimeout(function() {
+				console.log("我是延时函数！")
+			}, 2000)
+		});
+
+		document.querySelector(".close").addEventListener("click", function() {
+			clearTimeout(timeout)
+		});
+
+		// 五秒钟后，按钮不可见
+		setTimeout(function() {
+			document
+				.querySelector(".close")
+				.style.display = "none";
+		}, 5000)
+	</script>
+</body>
+
+</html>

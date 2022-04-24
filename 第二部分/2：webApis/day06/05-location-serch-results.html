@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>接收的结果</title>
+</head>
+
+<body>
+	<span></span>
+
+	<script>
+		// 获取参数
+		let search = location.search
+		let span = document.querySelector("span")
+		console.log(search)
+		span.innerHTML = search
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<button class="syg">上一个</button>
+	<button class="xyg">下一个</button>
+
+	<script>
+		// 跳转到上一步
+		document.querySelector(".syg")
+			.addEventListener("click", function() {
+				// 跳转到上一步
+				history.back()
+				// history.go(-1)
+			})
+
+		// 跳转到下一步
+		document.querySelector(".xyg")
+			.addEventListener("click", function() {
+				// 跳转到下一步
+				history.forward()
+				// history.go(1)
+			})
+	</script>
+</body>
+
+</html>
