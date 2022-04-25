@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		// 存储单一数据
+		// localStorage.setItem("key", "value");
+		localStorage.setItem("name", "张三")
+		localStorage.setItem("age", 20)
+
+		// 存储数据对象
+		let user = {
+			userName: "李四",
+			age: "20"
+		}
+		// 把对象转换成json
+		let json = JSON.stringify(user)
+		localStorage.setItem("user", json)
+
+		// 获取单一数据
+		let key = localStorage.getItem("key")
+		console.log(key)
+
+		// 获取对象数据
+		let userValue = localStorage.getItem("user")
+		console.log(userValue)
+		// JSON 解析对象，返回字符串
+		let jsonValue = JSON.parse(userValue)
+		console.log(jsonValue)
+
+		// 删除数据
+		localStorage.removeItem("age")
+	</script>
+</body>
+
+</html>
