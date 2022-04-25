@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<style>
+		input {
+			margin: 100px auto;
+			width: 200px;
+			height: 50px;
+			display: block;
+			border: 3px solid pink;
+		}
+	</style>
+</head>
+
+<body>
+	<input type="text" placeholder="请输入内容">
+
+	<script>
+		// 正则表达式
+		let reg = /维权/
+		// 替换指定的数据
+		let replace = "**"
+
+		// 监听输入的操作
+		let input = document
+			.querySelector("input")
+
+		input.addEventListener("input", function() {
+			// 把输入的内容替使用relace替换成指定的字符串     
+			let replaceValue = input.value.replace(reg, replace)
+
+			console.log(replaceValue)
+		})
+	</script>
+</body>
+
+</html>

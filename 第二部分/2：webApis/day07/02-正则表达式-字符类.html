@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<!-- 字符类-正则表达式 -->
+	<script>
+		// 使用规则：
+		// 1：[] 匹配字符集合
+		// 2：后面的字符只要包含括号内任意字符, 都会返回true
+		// 3: []中如果加上-去连接，则表示在一个范围内
+		// 4 ：a-z 表示从a-z 26个字母都可以
+		// 5 ：a-zA-Z 表示从a-z 26个字母都可以大小写都可以
+		// 6 ：0-9 表示所有数字都可以
+		// 7 ：^取反，表示除了[]内的内容都可以，注意，需要写到中括号里
+		// 8 ：.，表示匹配除了换行符之外的任意单个字符
+
+		console.log(/[abc]/.test("andy")) // true
+		console.log(/[abc]/.test("123")) // false
+
+		console.log(/[a-z]/.test("a")) // false
+		console.log(/[a-z]/.test("1")) // false
+		console.log(/[0-9]/.test("12a")) // true
+		console.log(/[a-z-_]/.test("_")) // false
+
+		console.log(/[^a-z]/.test("a")) // false
+		console.log(/[^a-z]/.test("1")) // true
+		console.log(/[^a-z]/.test("1")) // true
+		console.log(/./.test("")) // true
+	</script>
+</body>
+
+</html>

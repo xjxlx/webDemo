@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<style>
+		input {
+			margin: 100px auto;
+			width: 200px;
+			height: 50px;
+			display: block;
+		}
+	</style>
+</head>
+
+<body>
+	<input type="input" placeholder="请输入内容">
+
+	<script>
+		let input = document.querySelector("input")
+		// 元素失去焦点
+		input.addEventListener("blur", function() {
+			// 获取输入的内容
+			let value = input.value
+			console.log(value)
+		})
+	</script>
+</body>
+
+</html>
