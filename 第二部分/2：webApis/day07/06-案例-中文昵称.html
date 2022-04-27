@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		input {
+			width: 200px;
+			height: 100px;
+			background-color: pink;
+			margin: 100px auto;
+		}
+	</style>
+</head>
+
+<body>
+	<input type="input" placeholder="请输入名字">
+	<span></span>
+	<script>
+		// 昵称案例
+		// 需求：要求用户只能输入中文
+		// 分析：
+		// ①：首先准备好这种正则表达式模式^[\u4e00-\u9fa5]{2,8}$/
+		// ②：当表单失去焦点就开始验证. 
+		// ③：如果符合正则规范, 则让后面的span标签添加 right 类.
+		// ④：如果不符合正则规范, 则让后面的span标签添加 wrong 类.
+
+		// 正则表达式
+		let reg = /^[\u4e00-\u9fa5]{1,8}$/
+		let input = document.querySelector("input")
+		let span = document.querySelector("span")
+		input.addEventListener("blur", function(e) {
+			let result = reg.test(input.value.trim())
+			if (result) {
+				span.innerHTML = "正确"
+			} else {
+				span.innerHTML = "错误"
+			}
+		})
+	</script>
+</body>
+
+</html>
