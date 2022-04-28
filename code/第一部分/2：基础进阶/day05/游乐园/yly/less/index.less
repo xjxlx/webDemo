@@ -1,0 +1,190 @@
+// 引入其他的less，也可以单独的生成，看是否能够正常导出css
+@import 'base.less';
+@import 'normalize';
+
+// 公共的视口值
+@dp: 37.5rem;
+
+body {
+    background: #F0F0F0;
+}
+
+.main {
+    // 主体距离底部的偏移
+    padding-bottom: (50/@dp);
+
+    .banner img {
+        height: 160./@dp;
+        background-size: contain;
+    }
+
+    .title {
+        color: #3C3C3C;
+        font-size: 14./@dp;
+        line-height: 40./@dp;
+        margin-left: 15./@dp;
+        margin-top: 10./@dp;
+        font-weight: bold;
+    }
+
+    // 活动
+    .hd {
+        background-color: #fff;
+        position: relative;
+        margin-bottom: 10./@dp;
+
+        .icon {
+            height: 160./@dp;
+        }
+
+        .content {
+            padding-left: 15./@dp;
+            padding-right: 15./@dp;
+            padding-top: 8./@dp;
+
+            .titles {
+                display: flex;
+                justify-content: space-around;
+
+                .value {
+                    flex: 1;
+                    font-size: 15./@dp;
+                    color: #3C3C3C;
+                }
+
+                .sm {
+                    margin-left: 30.5./@dp;
+                    font-size: 15./@dp;
+                    color: #FE6249;
+                }
+            }
+
+
+            .bm {
+                margin-top: 18./@dp;
+                display: flex;
+                font-size: 11./@dp;
+                color: #B4B4B4;
+                align-items: center;
+                padding-bottom: 11./@dp;
+
+                .qz {
+                    font-size: 8./@dp;
+                }
+
+                .s1 {
+                    margin-left: 7./@dp;
+                }
+
+                .time {
+                    margin-left: 15./@dp;
+                    font-size: 8./@dp;
+                }
+
+                .s2 {
+                    margin-left: 5./@dp;
+                }
+            }
+        }
+
+        // 进行状态
+        .status {
+            background-image: url(../images/status_active.png);
+            width: 68./@dp;
+            height: 29./@dp;
+            background-size: contain;
+            font-size: 12./@dp;
+            color: white;
+            text-align: center;
+            // 此处为了往上挪动一点，所以此次把数据调小点
+            line-height: 25./@dp;
+
+            position: absolute;
+            left: 0;
+            top: -4./@dp;
+            margin-left: 15./@dp;
+
+            // 提高层级
+            z-index: 1;
+        }
+
+        // 收藏
+        .sc {
+            font-size: 24./@dp;
+            color: white;
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-right: 18./@dp;
+            margin-top: 10./@dp;
+        }
+    }
+
+    // 设置不同的状态背景
+    .hd:nth-child(n+1) .status {
+        background-image: url(../images/status_default.png);
+    }
+
+    // 已经结束的状态，上面加上蒙层
+    .hd:last-child::after {
+        content: " ";
+        display: block;
+        width: 100%;
+        height: 250./@dp;
+        background-color: rgba(0, 0, 0, 0.3);
+
+        // 定位
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
+
+footer {
+    height: 50./@dp;
+    background: #FECA49;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    // 使用了fixed后，标签会脱标，要重新给设置宽度
+    width: 100%;
+
+    // 提高层级
+    z-index: 2;
+
+
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+
+        .item2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .icon2 {
+                font-size: 24./@dp;
+                color: #D78B09;
+            }
+
+            .title2 {
+                margin-top: 3./@dp;
+                color: #D78B09;
+                font-size: 11./@dp;
+            }
+        }
+
+        // 第一条数据白色
+        .item2:first-child .icon2 {
+            color: white;
+        }
+
+        .item2:first-child .title2 {
+            color: white;
+        }
+    }
+
+}
