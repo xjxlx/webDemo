@@ -221,7 +221,6 @@
 		//         如果没有勾选同意协议，则提示 需要勾选
 
 		//1:执行验证码的逻辑
-		;
 		(function() {
 			//    逻辑：发送验证码, 用户点击之后，显示 05秒后重新获取, 时间到了，自动改为 重新获取
 			let code = document.querySelector(".xtx-form-item .code")
@@ -240,25 +239,27 @@
 					}
 				}, 1000)
 			});
-		}())
+		}());
 
 		// 2：用户名验证
-		// (function() {
-		// 	// 需求②： 用户名验证（注意封装函数 verifyxxx） 正则 /^[a-zA-Z0-9-_]{6,10}$/
-		// 	//        如果不符合要求，则出现提示信息 并 return false 否则 则返回return true 
-		// 	//        之所以返回 布尔值，是为了 最后的提交按钮做准备
-		// 	// let nice = document.querySelector(".xtx-form-item .username")
-		// 	let nice = document.querySelector(" .username")
-		// 	console.log(nice)
-		// 	nice.addEventListener("input", function(event) {
-		// 		console.log(username.value)
-		// 	})
-		// }())
 
-		let nices = document.querySelector(".xtx-form-item .username")
-		nices.addEventListener("input", function(event) {
-			console.log(username.value)
-		})
+		(function() {
+			// 需求②： 用户名验证（注意封装函数 verifyxxx） 正则 /^[a-zA-Z0-9-_]{6,10}$/
+			//        如果不符合要求，则出现提示信息 并 return false 否则 则返回return true 
+			//        之所以返回 布尔值，是为了 最后的提交按钮做准备
+			// 这里使用css属性选择器去控制 input name="username
+			let nice = document.querySelector("[name='username']")
+			nice.addEventListener("change", function(event) {
+				console.log(nice.value)
+				let span = nice.nextElementSibling
+
+				if (!/^[a-zA-Z0-9-_]{6,10}$/.test(nice.value)) {
+					span.innerHTML = "输入错误"
+				} else {
+					span.innerHTML = ""
+				}
+			})
+		}())
 	</script>
 </body>
 
