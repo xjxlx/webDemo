@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<button type="button">Ajax请求</button>
+	<script>
+		document
+			.querySelector("button")
+			.addEventListener("click", function() {
+				$.ajax({
+					// 请求方式
+					type: "POST",
+					// 请求参数
+					data: {
+						bookname: '不死不灭',
+						author: '辰东',
+						publisher: '北京图书出版社'
+					},
+					// 请求结果 --成功
+					success: function(response) {
+						console.log("success", response)
+					},
+					// 请求结果 --- 失败
+					error: function(response) {
+						console.log("error", response)
+					}
+				})
+			})
+	</script>
+
+	<!-- 引入js -->
+	<script src="./lib/jquery.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<button type="button">Post请求</button>
+	<script>
+		document
+			.querySelector("button")
+			.addEventListener("click", function() {
+				$.post("http://www.liulongbin.top:3006/api/addbook", {
+					bookname: '不死不灭',
+					author: '辰东',
+					publisher: '北京图书出版社'
+				}, function(res) {
+					console.log(res)
+				})
+			});
+	</script>
+
+	<!-- 引入js -->
+	<script src="./lib/jquery.js"></script>
+</body>
+
+</html>
