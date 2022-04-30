@@ -1,4 +1,2 @@
-*.node_modules/
-
-node_modules/
-dist/
+# 忽略所有的安装包文件夹
+*node_modules/
