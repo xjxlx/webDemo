@@ -1,0 +1,16 @@
+{
+"name": "webapphelper", 
+"version": "1.1.0",
+"main": "index.js",
+"description": "这是一个提供了web开发的工具类，里面集成了各种工具类，方便快速的开发",
+"keywords": [
+"web",
+"dateUtil",
+"helper",
+"webhelper",
+"apphelper",
+"app",
+"webapphelper"
+],
+"license": "ISC"
+}
