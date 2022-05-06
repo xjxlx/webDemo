@@ -12,6 +12,11 @@ const htmlPlugin = new HtmlPlugin({
 	filename: "./index.html" // 指定生成文件存放的路径
 })
 
+// 导入清理build的插件
+const {
+	CleanWebpackPlugin
+} = require('clean-webpack-plugin');
+
 // 使用node的语法,到处对象
 module.exports = {
 	mode: "development", // mode 是指定构建模式的，development 是开发模式，production 是上线模式
@@ -27,7 +32,7 @@ module.exports = {
 		// 存放的路径
 		path: path.join(__dirname, "dist"),
 		// 生成文件的名字
-		filename: "bundle.js"
+		filename: "js/bundle.js"
 	},
 	// 用来解决无法直接预览页面，报错Cannot GET的问题
 	devServer: {
@@ -36,11 +41,14 @@ module.exports = {
 			watch: true
 		},
 		open: true, // 初次打包后，自动打开浏览器
-		host: "127.0.0.1", // 实时打包所使用的主机地址
+		// host: "127.0.0.1", // 实时打包所使用的主机地址
 		// port: "80" // 实时打包使用的端口号,80端口，是默认的，可以省略
 	},
 	//3：通过plugins节点，使htmlplugin插件生效
-	plugins: [htmlPlugin],
+	plugins: [
+		htmlPlugin,
+		new CleanWebpackPlugin()
+	],
 
 	module: {
 		rules: [
@@ -62,7 +70,9 @@ module.exports = {
 				// 其中 ? 之后的是 loader 的参数项： 
 				// 1:limit 用来指定图片的大小，单位是字节（byte）
 				// 2:只有 ≤ limit 大小的图片，才会被转为 base64 格式的图片
-				use: ["url-loader?limit-22229"]
+				// 3:outputPath 明确指出打包生成的图片，存储到dist目录下的image文件夹中
+				// 4:多个参数需要使用&符号进行拼接
+				use: ["url-loader?limit=22229&outputPath=images"]
 			},
 
 			// 处理 高级的js语法
@@ -75,5 +85,9 @@ module.exports = {
 				exclude: /node_modules/
 			}
 		]
-	}
+	},
+	// 在开发阶段，在运行报错的时候,行数于源代码的行数保持一致， eval-source-map
+	// devtool: "eval-source-map",
+	// 在发布阶段，在运行报错的时候,行数于源代码的行数保持一致，建议关闭 Source Map 或将 devtool 的值设置为 nosources-source-map
+	devtool: "nosources-source-map"
 }
