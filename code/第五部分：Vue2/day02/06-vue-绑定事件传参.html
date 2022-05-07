@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="app">
+		<!-- 单纯传递数据 -->
+		<button @click="add(`哈哈哈`)">自增加</button>
+
+		<br>
+		<!-- 第一个参数用来传递数据 -->
+		<!-- 第二个参数使用 $参数名 用来表示原生对象的event,可以用来解决参数对象被覆盖的问题-->
+		<button style="background-color: red;" @click="add2(111,$event)">自增加</button>
+	</div>
+
+
+	<!-- 1：导入vue -->
+	<script src="./lib/vue-2.6.12.js"></script>
+
+	<!-- 2:设置vue的绑定区域和事件 -->
+	<script>
+		// 构建vue对象
+		const vm = new Vue({
+			// 设置绑定区域,接收的是一个标签，可以是id,也可以是class,或者标签都可以
+			el: ".app",
+			// 渲染到页面上的数据
+			data: {
+				count: 10
+			},
+			methods: {
+				add(step) {
+					console.log(step)
+					// 得到字符串 哈哈哈
+					this.count += 1
+				},
+				add2(step, e) {
+					console.log(step)
+					// 得到 numnber 333
+					console.log(e.target.style.backgroundColor + " ---")
+					//  得到red
+					this.count += 1
+				}
+			}
+		})
+	</script>
+
+</body>
+
+</html>
