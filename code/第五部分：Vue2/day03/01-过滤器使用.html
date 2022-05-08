@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<div id="app">
+		<p>{{content | conver2 }}</p>
+	</div>
+
+	<!-- 1:导入vue.js -->
+	<script src="./lib/vue-2.6.12.js"></script>
+
+	<script>
+		// 使用全局过滤器
+		Vue.filter("conver2", function(con) {
+			console.log("内容 -->" + con)
+			return con.toUpperCase()
+		})
+
+		const vm = new Vue({
+			// 定义区域
+			el: "#app",
+			data: {
+				content: "helle Vue.js"
+			},
+			// 定义过滤器
+			filters: {
+				conver(content) {
+					console.log("内容 -->" + content)
+					return content.toUpperCase()
+				}
+			}
+		});
+	</script>
+</body>
+
+</html>
