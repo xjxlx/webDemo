@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<!-- 1:导入vue.js -->
+	<script src="./lib/vue-2.6.12.js"></script>
+
+	<div id="app">
+		<div>我的名字是：{{user.name}} 我的年龄是：{{user.age}}</div>
+		<input type="text" v-model="user.name">
+	</div>
+
+	<script>
+		const vm = new Vue({
+			el: "#app",
+			data: {
+				userName: "张三",
+				user: {
+					name: "张三",
+					age: 23
+				}
+			},
+			// 监听器 ---> 对象格式的监听
+			watch: {
+				user: {
+					handler(content) {
+						console.log(content.name + " -- " + content.age)
+					},
+					// 加入这个属性，则可以监听对象中某个属性的变化
+					deep: true
+				}
+			}
+		})
+	</script>
+</body>
+
+</html>
