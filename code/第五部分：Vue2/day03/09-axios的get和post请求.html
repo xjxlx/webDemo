@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>09</title>
+</head>
+
+<body>
+	<script src="./lib/axios.js"></script>
+	<script src="./lib/vue-2.6.12.js"></script>
+
+	<div id="app">
+		<button @click="getBooks">get请求</button>
+		<button @click="PostBooks">Post请求</button>
+	</div>
+
+	<script>
+		const vm = new Vue({
+			el: "#app",
+			methods: {
+				async getBooks() {
+					const {
+						data: response
+					} = await axios.get("http://www.liulongbin.top:3006/api/getbooks", {
+						params: {
+							id: 1
+						}
+					})
+					console.log(response)
+				},
+				async PostBooks() {
+					const {
+						data: response
+					} = await axios.post("http://www.liulongbin.top:3006/api/post", {
+						data: {
+							name: '张三',
+							age: 20
+						}
+					})
+					console.log(response)
+				}
+			}
+		})
+	</script>
+
+
+</body>
+
+</html>
