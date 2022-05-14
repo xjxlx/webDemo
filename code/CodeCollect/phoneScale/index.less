@@ -1,0 +1,53 @@
+// out: ./index.css
+
+// 变量: 存储37.5
+@rootSize: 37.5rem;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    background-color: pink;
+    border: 1px solid #fff;
+}
+
+// 当前显示的图片 
+.photo_selectored {
+    width: (81/ @rootSize);
+    height: (43.5/ @rootSize);
+}
+
+// 遮罩层的父标签
+.mark_parent {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.mark_image {
+    position: absolute;
+}
+
+.control_left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-size: contain;
+}
+
+.control_right {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-size: contain;
+}

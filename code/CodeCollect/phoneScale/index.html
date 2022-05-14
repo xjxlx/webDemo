@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>图片点击放大</title>
+	<!-- jQuery -->
+	<link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+	<div class="app">
+		<!-- 缩放的父布局,里面包含了两个view,一个是当前显示的布局,一个是遮罩层的布局 -->
+		<div class="photoScale">
+			<!-- 当前图片的父布局,可以是div, -->
+			<ul class="selected_parent">
+				<li v-for="(item,index) in photoData">
+					<img class="photo_selectored" :src="item.src" @click="item_click(index)">
+				</li>
+		</div>
+
+		<!-- 遮罩层的父布局 width: 100%;height:100%; -->
+		<div class="mark_parent">
+			<img class="control_left" src="./images/icon_left.png" alt="" style="background-color:red" @click="control_left" />
+			<img class="mark_image" src="" style="border:1px solid #fff;">
+			<img class="control_right" src="./images/icon_right.png" alt="" style="background-color:red" @click="control_right" />
+		</div>
+	</div>
+
+	<!-- 引入vue -->
+	<script src="../lib/jquery.js"></script>
+	<script src="../lib/vue-2.6.12.js"></script>
+	<script src="../lib/flexible.js"></script>
+	<script src="./index.js"></script>
+
+</body>
+
+</html>
