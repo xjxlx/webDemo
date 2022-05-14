@@ -8,6 +8,12 @@
     padding: 0;
 }
 
+body {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
 ul {
     display: flex;
 }
@@ -15,6 +21,10 @@ ul {
 li {
     background-color: pink;
     border: 1px solid #fff;
+}
+
+.photoScale {
+    margin-top: 100px;
 }
 
 // 当前显示的图片 
@@ -25,13 +35,14 @@ li {
 
 // 遮罩层的父标签
 .mark_parent {
-    display: none;
     position: fixed;
     width: 100%;
     height: 100%;
     left: 0;
     top: 0;
     background: rgba(0, 0, 0, 0.7);
+    display: none;
+    z-index: 2;
 }
 
 .mark_image {
