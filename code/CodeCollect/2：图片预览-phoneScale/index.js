@@ -12,7 +12,6 @@ var vm = new Vue({
 			{ id: 8, src: "./images/home_test_drive_8.jpg" },
 			{ id: 9, src: "./images/home_test_drive_9.jpg" }
 		],
-		appRoot: [],
 		images: [],
 		markParent: {},
 		markContent: {},
@@ -40,10 +39,7 @@ var vm = new Vue({
 			markContent = document.querySelector(".mark_image")
 			console.log(markContent)
 
-			// 1.3 获取根部的标签
-			appRoot = document.querySelector(".app")
-
-			// 1.4 获取左右两侧的标签 left
+			// 1.3 获取左右两侧的标签 left
 			leftControl = document.querySelector(".control_left")
 			rightControl = document.querySelector(".control_right")
 		},
@@ -99,12 +95,12 @@ var vm = new Vue({
 				markParent.height = windowH
 
 				// 页面不可滑动
-				appRoot.style.overflow = "hidden"
+				document.body.style.overflow = "hidden"
 
 				// 8：控制点击关闭自己
 				markParent.addEventListener("click", function() {
 					markParent.style.display = "none"
-					appRoot.style.overflow = "auto";
+					document.body.style.overflow = "auto";
 				})
 
 				// 9:设置遮罩层的图片以及居中显示
