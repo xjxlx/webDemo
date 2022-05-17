@@ -1,80 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
+
 <body>
-    <div class="img-box">
+	<div class="img-box">
 
-        <img src="../images/home_test_drive_1.jpg" alt="">
-    </div>
+		<img src="../images/home_test_drive_1.jpg" alt="">
+	</div>
 
-    <script>
+	<script>
+		var ele = document.querySelector(".img-box");
+		var beginX, beginY, endX, endY, swipeLeft, swipeRight;
+		ele.addEventListener('touchstart', function(event) {
+			event.stopPropagation();
+			event.preventDefault();
+			beginX = event.targetTouches[0].screenX;
+			beginY = event.targetTouches[0].screenY;
+			swipeLeft = false, swipeRight = false;
+		});
 
-        var ele = document.querySelector(".img-box");
-        var beginX, beginY, endX, endY, swipeLeft, swipeRight;
-        ele.addEventListener('touchstart', function (event) {
-            event.stopPropagation();
-            event.preventDefault();
-            beginX = event.targetTouches[0].screenX;
-            beginY = event.targetTouches[0].screenY;
-            swipeLeft = false, swipeRight = false;
-        });
+		ele.addEventListener('touchmove', function(event) {
+			event.stopPropagation();
+			event.preventDefault();
+			endX = event.targetTouches[0].screenX;
+			endY = event.targetTouches[0].screenY;
+			// 左右滑动
+			if (Math.abs(endX - beginX) - Math.abs(endY - beginY) > 0) {
+				/*向右滑动*/
+				if (endX - beginX > 0) {
+					swipeRight = true;
+					swipeLeft = false;
+					console.log("touchmove --->向右滑动")
+				}
+				/*向左滑动*/
+				else {
+					swipeLeft = true;
+					swipeRight = false;
+					console.log("touchmove --->向左滑动")
 
-        ele.addEventListener('touchmove', function (event) {
-            event.stopPropagation();
-            event.preventDefault();
-            endX = event.targetTouches[0].screenX;
-            endY = event.targetTouches[0].screenY;
-            // 左右滑动
-            if (Math.abs(endX - beginX) - Math.abs(endY - beginY) > 0) {
-                /*向右滑动*/
-                if (endX - beginX > 0) {
-                    swipeRight = true;
-                    swipeLeft = false;
-                    console.log("touchmove --->向右滑动")
-                }
-                /*向左滑动*/
-                else {
-                    swipeLeft = true;
-                    swipeRight = false;
-                    console.log("touchmove --->向左滑动")
+				}
+			}
+			else if (Math.abs(endX - beginX) - Math.abs(endY - beginY) < 0)
+			{
+				// 上下滑动
+			}
+		});
 
-                }
-            }
-            else if(Math.abs(endX - beginX) - Math.abs(endY - beginY) < 0)
-            {
-                // 上下滑动
-            }
-        });
+		ele.addEventListener('touchend', function(event) {
+			event.stopPropagation();
+			event.preventDefault();
 
-        ele.addEventListener('touchend', function (event) {
-            event.stopPropagation();
-            event.preventDefault();
-
-            if (Math.abs(endX - beginX) - Math.abs(endY - beginY) > 0) {
-                event.stopPropagation();
-                event.preventDefault();if (swipeRight) {
-                    swipeRight = !swipeRight;
-                    /*向右滑动*/
-                    console.log("touchend --->向右滑动")
-
-                }
-                if(swipeLeft) {
-                    swipeLeft = !swipeLeft;
-                    /*向左滑动*/
-                    console.log("touchend --->向左滑动")
-
-                }
-            }
-        });
-
-
-
-    </script>
+			if (Math.abs(endX - beginX) - Math.abs(endY - beginY) > 0) {
+				event.stopPropagation();
+				event.preventDefault();
+				if (swipeRight) {
+					swipeRight = !swipeRight;
+					/*向右滑动*/
+					console.log("touchend --->向右滑动")
+				}
+				if (swipeLeft) {
+					swipeLeft = !swipeLeft;
+					/*向左滑动*/
+					console.log("touchend --->向左滑动")
+				}
+			}
+		});
+	</script>
 
 </body>
+
 </html>
