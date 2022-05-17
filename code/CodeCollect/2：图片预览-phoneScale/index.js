@@ -2,15 +2,15 @@ var vm = new Vue({
 	el: ".app",
 	data: {
 		photoData: [
-			{ id: 1, src: "./images/home_test_drive_1.jpg" },
-			{ id: 2, src: "./images/home_test_drive_2.jpg" },
-			{ id: 3, src: "./images/home_test_drive_3.jpg" },
-			{ id: 4, src: "./images/home_test_drive_4.jpg" },
-			{ id: 5, src: "./images/home_test_drive_5.jpg" },
-			{ id: 6, src: "./images/home_test_drive_6.jpg" },
-			{ id: 7, src: "./images/home_test_drive_7.jpg" },
-			{ id: 8, src: "./images/home_test_drive_8.jpg" },
-			{ id: 9, src: "./images/home_test_drive_9.jpg" }
+			{ id: 1, src: "../images/home_test_drive_1.jpg" },
+			{ id: 2, src: "../images/home_test_drive_2.jpg" },
+			{ id: 3, src: "../images/home_test_drive_3.jpg" },
+			{ id: 4, src: "../images/home_test_drive_4.jpg" },
+			{ id: 5, src: "../images/home_test_drive_5.jpg" },
+			{ id: 6, src: "../images/home_test_drive_6.jpg" },
+			{ id: 7, src: "../images/home_test_drive_7.jpg" },
+			{ id: 8, src: "../images/home_test_drive_8.jpg" },
+			{ id: 9, src: "../images/home_test_drive_9.jpg" }
 		],
 		images: [],
 		markParent: {},
