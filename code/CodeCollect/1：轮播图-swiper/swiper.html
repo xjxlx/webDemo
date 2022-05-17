@@ -14,54 +14,58 @@
 <body>
 	<div class="swiper-container swiper-container-1">
 		<div class="swiper-wrapper">
-			<div class="swiper-slide"  >
-				<img src="../images/home_test_drive_1.jpg" alt="">
+			<div class="swiper-slide">
+				<img src="../images/home_test_drive_1.jpg" alt="" class="111">
 			</div>
-			<div class="swiper-slide">				
-				<img src="../images/home_test_drive_2.jpg" alt="">
+			<div class="swiper-slide">
+				<img src="../images/home_test_drive_2.jpg" alt=""class="111">
 			</div>
-			<div class="swiper-slide">				
-				<img src="../images/home_test_drive_3.jpg" alt="">
+			<div class="swiper-slide">
+				<img src="../images/home_test_drive_3.jpg" alt=""class="111">
 			</div>
-			<div class="swiper-slide">				
-				<img src="../images/home_test_drive_4.jpg" alt="">
+			<div class="swiper-slide">
+				<img src="../images/home_test_drive_4.jpg" alt=""class="111">
 			</div>
 		</div>
 		<!-- Add Pagination -->
-		<div class="swiper-pagination"></div>
+		<div class="swiper-pagination-1">
+			<div class="swiper-pagination"></div>
+		</div>
 		<!-- Add Arrows -->
-		<div class="swiper-button-next"></div>
-		<div class="swiper-button-prev"></div>
+		<div class="swiper-navigation-1">
+			<div class="swiper-button-next" @click.stop="nextEl"></div>
+			<div class="swiper-button-prev" @click.stop="nextEl"></div>
+		</div>
 	</div>
 
 	<div class="mark_parent">
 
 		<div class="swiper-container swiper-container-2">
 			<div class="swiper-wrapper">
-				<div class="swiper-slide"  >
-					<img src="../images/home_test_drive_1.jpg" alt="">
+				<div class="swiper-slide">
+					<img src="../images/home_test_drive_1.jpg" alt="" class="222">
 				</div>
-				<div class="swiper-slide">				
-					<img src="../images/home_test_drive_2.jpg" alt="">
+				<div class="swiper-slide">
+					<img src="../images/home_test_drive_2.jpg" alt=""class="222">
 				</div>
-				<div class="swiper-slide">				
-					<img src="../images/home_test_drive_3.jpg" alt="">
+				<div class="swiper-slide">
+					<img src="../images/home_test_drive_3.jpg" alt=""class="222">
 				</div>
-				<div class="swiper-slide">				
-					<img src="../images/home_test_drive_4.jpg" alt="">
+				<div class="swiper-slide">
+					<img src="../images/home_test_drive_4.jpg" alt=""class="222">
 				</div>
 			</div>
 			<!-- Add Pagination -->
-			<div class="swiper-pagination"></div>
+			<div class="swiper-pagination-2">
+				<div class="swiper-pagination"></div>
+			</div>
 			<!-- Add Arrows -->
-			<div class="swiper-button-next"></div>
-			<div class="swiper-button-prev"></div>
+			<div class="swiper-navigation-2">
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+			</div>
 		</div>
-
 	</div>
-
-
-
 
 	<!-- Swiper JS -->
 	<script src="./swiper.min.js"></script>
@@ -69,20 +73,38 @@
 
 	<!-- Initialize Swiper -->
 	<script>
-		let  mark = document.querySelector(".mark_parent")
-
+		let mark = document.querySelector(".mark_parent")
 
 		var swiper = new Swiper('.swiper-container-1', {
 			pagination: '.swiper-pagination',
 			nextButton: '.swiper-button-next',
 			prevButton: '.swiper-button-prev',
+			// navigation: {
+			// 	// 指定父类的更靠谱 4.0以后可用
+			// 	nextEl: 'swiper-navigation-1 .swiper-button-prev',
+			// 	prevEl: 'swiper-navigation-1 .swiper-button-next',
+			// },
+
+			// pagination: {
+			// 	// 多个的话，需要指定父类，避免冲突 4.0以后可用
+			// 	el: 'swiper-pagination-1>swiper-pagination',
+			// 	clickable: true
+			// },
+
 			slidesPerView: 1,
 			paginationClickable: true,
 			spaceBetween: 30,
 			loop: true,
-			onTap: function(swiper, event) {
+			onTap: function (swiper, event) {
 				console.log("--->")
-				mark.style.display ="block";
+				// mark.style.display = "block";
+				// event.stopPropagation();
+ 				console.log(event)
+ 				console.log(event.target.className)
+ 				console.log(event.target.id)
+				 if(event.target.className==="111"){
+					mark.style.display = "block";
+				 }
 			}
 		});
 
@@ -93,15 +115,22 @@
 			slidesPerView: 2,
 			paginationClickable: true,
 			spaceBetween: 30,
-			observer:true,/*启动动态检查器，当改变swiper的样式（例如隐藏/显示）或者修改swiper的子元素时，自动初始化swiper。*/
-			observeParents:true,/*将observe应用于Swiper的父元素。当Swiper的父元素变化时，例如window.resize，Swiper更新。*/
-			observeSlideChildren:true,
-			slidesPerView : 'auto',
-
+			observer: true,
+			/*启动动态检查器，当改变swiper的样式（例如隐藏/显示）或者修改swiper的子元素时，自动初始化swiper。*/
+			observeParents: true,
+			/*将observe应用于Swiper的父元素。当Swiper的父元素变化时，例如window.resize，Swiper更新。*/
+			observeSlideChildren: true,
+			slidesPerView: 'auto',
+			onTap: function (swiper, event) {
+				console.log("--->")
+			
+				if(event.target.className==="222"){
+					mark.style.display = "none";
+				 }
+			}
 
 			// loop: true,
 		});
-
 	</script>
 </body>
 
