@@ -7,6 +7,10 @@ import CommonVue from './components/CommonVue.vue'
 // 2:声明组件
 Vue.component('CommonVue', CommonVue)
 
+// 注册全局组件
+import Count from "@/components/Count.vue"
+Vue.component('Count', Count)
+
 Vue.config.productionTip = false
 
 new Vue({

@@ -1,8 +1,10 @@
 <template>
 	<div id="app">
 		<img alt="Vue logo" src="./assets/logo.png" />
-		<left>Vue-Left</left>
-		<right>Vue-Right</right>
+		<div class="content">
+			<left class="left">Vue-Left</left>
+			<right class="right">Vue-Right</right>
+		</div>
 		<CommonVue>我是公共组件</CommonVue>
 	</div>
 </template>
@@ -28,5 +30,17 @@
 		text-align: center;
 		color: #2c3e50;
 		margin-top: 60px;
+	}
+
+	.content {
+		display: flex;
+	}
+
+	.left {
+		width: 50%;
+	}
+
+	.right {
+		width: 50%;
 	}
 </style>
