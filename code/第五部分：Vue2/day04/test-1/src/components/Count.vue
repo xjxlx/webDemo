@@ -1,4 +1,4 @@
-<template>
+ <template>
 	<div>
 		<p>当前的值是：{{count}}</p>
 		<button type="button" @click="add">自增加</button>
