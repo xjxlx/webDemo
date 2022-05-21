@@ -5,9 +5,9 @@
     "baseUrl": "./",
     "moduleResolution": "node",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+        "@/*": [
+            "src/*"
+        ]
     },
     "lib": [
       "esnext",
@@ -15,5 +15,7 @@
       "dom.iterable",
       "scripthost"
     ]
-  }
+    ,
+    "jsx": "preserve"
+  },
 }

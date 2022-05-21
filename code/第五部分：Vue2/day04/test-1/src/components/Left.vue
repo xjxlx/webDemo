@@ -23,11 +23,7 @@
 		color: red;
 	}
 
-	// h5[data-v-3c83f0b7]
-	// [data-v-3c83f0b7] h5
-
-	// 当使用第三方组件库的时候，如果有修改第三方组件默认样式的需求，需要用到 /deep/
-	/deep/ h5 {
+	h5 {
 		color: pink;
 	}
 </style>
