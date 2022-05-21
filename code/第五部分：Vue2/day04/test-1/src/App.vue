@@ -9,7 +9,7 @@
 	</div>
 </template>
 <script>
-	// 1:导入组件
+	// 1:导入组件-->私有组件
 	import Left from "@/components/Left.vue";
 	import Right from "@/components/Right.vue";
 

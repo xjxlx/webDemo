@@ -43,6 +43,8 @@
 	};
 </script>
 
-<style lang="less" scoped>
-
+<style lang="less">
+	p {
+		background-color: pink;
+	}
 </style>

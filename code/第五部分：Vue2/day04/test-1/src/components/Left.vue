@@ -1,8 +1,8 @@
 <template>
-	<div class="left-container">
-		<h3>Left 组件</h3>
-		<hr />
-		<Count :init="zhansan"></Count>
+	<div class="left-container" data-v="1">
+		<h3 data-v="1">Left 组件</h3>
+		<hr data-v="1" />
+		<Count :init="7" data-v="1"></Count>
 	</div>
 </template>
 
@@ -19,10 +19,10 @@
 	}
 
 	h3 {
-		color: red;
+		background-color: pink;
 	}
 
-	h5 {
-		color: pink;
+	::v-deep p {
+		background-color: skyblue;
 	}
 </style>

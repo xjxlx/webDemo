@@ -11,6 +11,7 @@ Vue.component('CommonVue', CommonVue)
 import Count from "@/components/Count.vue"
 Vue.component('Count', Count)
 
+
 Vue.config.productionTip = false
 
 new Vue({
