@@ -15,7 +15,7 @@
 	export default {
 		name: 'App',
 		components: {
-			Son
+			Son,
 		},
 		methods: {
 			// 2：在方法中获取接收到的数据
@@ -35,5 +35,7 @@
 		text-align: center;
 		color: #2c3e50;
 		margin-top: 60px;
+
+		display: flex;
 	}
 </style>
